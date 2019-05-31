@@ -1,0 +1,130 @@
+/*Body*/
+body {
+    background-image: url("../blue.jpg");
+    background-repeat: no-repeat; 
+    background-size: 1400px ;
+    background-attachment: scroll;
+    min-height: 890px;
+}   
+
+.Spacers p{
+    text-align: center;
+    width: 50%;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    border: 5px white solid;
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: 320px;
+    margin-top: 50px;
+}
+
+.center{
+    text-align: center;
+}
+
+.login{
+    min-height: 250px;
+}
+
+.logo {
+    width: 100px;
+    height: 50px;
+}  
+
+.navhold{
+    text-align: center;
+    width: 80%;
+    margin-left: 200px;
+    /*margin-right: auto;*/
+    float: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.holder {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+/* Styles the links inside the navigation bar */
+.topnav a {
+    float: none;
+    color: #000000;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 30px;
+    background-color: white;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav .active {
+    background-color: darkblue;
+    color: white;
+}
+
+.images {
+    width: 400px;
+    height: 400px;
+    margin-top: 15px;
+}
+    
+/*footer section*/
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  height:90px; 
+}
+/*login for application*/
+.login-form {
+			width: 300px;
+			margin: 0 auto;
+			font-family: Tahoma, Geneva, sans-serif;
+		}
+		.login-form h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px 0 20px 0;
+		}
+		.login-form input[type="password"],
+		.login-form input[type="text"] {
+			width: 100%;
+			padding: 15px;
+			border: 1px solid #dddddd;
+			margin-bottom: 15px;
+			box-sizing:border-box;
+		}
+		.login-form input[type="submit"] {
+			width: 100%;
+			padding: 15px;
+			/*background-color: #535b63;*/
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+			margin-bottom: 10px;
+		}

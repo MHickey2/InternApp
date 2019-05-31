@@ -1,0 +1,38 @@
+  <body style="background-color: lightblue" > 
+   <% include ../partial/header%> 
+    
+
+ <head>
+    <meta charset="UTF-8">
+ <title>
+     Intern Assistance App
+ </title>
+ <link rel="stylesheet" href='app.css' type="text/css">
+ 
+</head>
+<br>
+<br>
+<div class="Spacers">
+    <h1 class="center">Welcome to the Intern Assistance Portal</h1>
+    <p>We hope you have a great experience with us and we hope we have provided all you need to make you comfortable in
+    your position. Login and Register to get up to date information on your role, We have provided you with all the information
+    you need, but if you want more please contact us. Welcome to the Company and we hope you enjoy the experience.</p>
+</div>
+
+
+
+
+<div class="login-form">
+			<h1>Login Form</h1>
+			<form action="auth" method="POST">
+				<input type="text" name="username" placeholder="Username" required>
+				<input type="password" name="password" placeholder="Password" required>
+				<input type="submit">
+			</form>
+</div>
+<br>
+<br>
+<br>
+<br>
+<% include ../partial/footer %>
+</body>
