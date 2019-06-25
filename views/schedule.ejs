@@ -8,24 +8,25 @@
        <link rel="stylesheet" href="../app.css" type="text/css">
   </head>
   
-  
-            <div class="container">
-                <h2> Scheduling </h2>
+        <h2 class="center"> Scheduling </h2>
+            <div class="container center">
+                
                 <form action ="/addtask" method="POST">
-                        <input type="text" name="newtask" placeholder="add new task">  
-                        <button> Add Task </button>
-                        <br>
-                        <h2> Added Task </h2>
-                        <button formaction="/removetask" type="submit"> Remove </button>
-                </form>
+                    
+                    <textarea name="newtask" class="tasks" placeholder="details of task....."></textarea>
+                    
+                </form>    
+                    
+                    <button formaction="/addtask" type=submit"> Add Task </button>
+                    <button formaction="/removetask" type="submit"> Remove Task</button>
+                    <button formaction="/seealltasks" type="submit"> View Tasks </button>
+                
             </div>
   
   
  
-<!--    <%# for(var i = 0; i < complete.length; i++){ %>-->
-<!--      <li><input type="checkbox" checked><%#= complete[i] %> </li>-->
-<!--<% #} %>-->
-                <!--my page info goes here-->
+
+             
     
     
     <% include ../partial/footer %>

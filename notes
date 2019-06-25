@@ -1,0 +1,28 @@
+ <%# res.forEach(function(contacts2) { %#>
+
+            // <div class="contact">
+            //     <div class="item">
+                    <h3 class="contacttitle">EmpId: <%#= contacts2.EmpId %></h3>-->
+    <!--                <h3 class="contact">Name: <%#= contacts2.Name %></h3>-->
+    <!--                <p class="contact" id="justify">Description: <%#= contacts2.Description %></p>-->
+    <!--                <p class="contact" id="justify">Contact_No: <%#= contacts2.Contact_No %></p>-->
+    <!--                <img src="/<%#= contacts2.Image %>" class="pimage"></image>-->
+                    
+    <!--<br>-->
+    <!--<br> -->
+    <!--            </div>-->
+    <!--        </div>-->
+
+
+    <!--    <%# }); %>-->
+    <br>
+    <br>
+    <br>
+
+    </div>
+        
+    <br>
+    
+    <!--    <%# for(var i = 0; i < complete.length; i++){ %>-->
+<!--      <li><input type="checkbox" checked><%#= complete[i] %> </li>-->
+<!--<% #} %>-->

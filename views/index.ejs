@@ -20,17 +20,59 @@
 </div>
 
 
+<div class="row">
+<div class="container1">
 
+<div class="item">
 
-<div class="login-form">
-			<h1>Login Form</h1>
-			<form action="auth" method="POST">
-				<input type="text" name="username" placeholder="Username" required>
-				<input type="password" name="password" placeholder="Password" required>
-				<input type="submit">
-			</form>
+	<h1 class="center">Login</h1>
+
+	
+
+	<!-- LOGIN FORM -->
+	<div class="login-form">
+	<form action="/login" method="post">
+		<div class="form-group">
+			<label>Username</label>
+			<input type="text" class="form-control" name="username">
+		</div>
+				<div class="form-group">
+			<label>Email</label>
+			<input type="text" class="form-control" name="email">
+		</div>
+		<div class="form-group">
+			<label>Password</label>
+			<input type="password" class="form-control" name="password">
+		</div>
+
+		<button type="submit" class="button">Login</button>
+
+	
+	
+
+	<hr>
+
+	<p>Already have an account? <br><a href="/login" class="button">Login</a></p>
+	<p>Or go <br><a href="/" class="button">home</a>.</p>
+	
+		</form>
 </div>
-<br>
+</div>
+
+</div>
+  </div>
+
+
+<!--<div class="login-form">-->
+<!--			<h1>Login Form</h1>-->
+<!--			<form action="auth" method="POST">-->
+<!--				<input type="text" name="username" placeholder="Username" required>-->
+<!--				<input type="password" name="password" placeholder="Password" required>-->
+<!--				<input type="submit">-->
+			
+<!--			</form>-->
+<!--</div>-->
+<!--<br>-->
 <br>
 <br>
 <br>

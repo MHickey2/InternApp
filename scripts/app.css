@@ -4,7 +4,9 @@ body {
     background-repeat: no-repeat; 
     background-size: 1400px ;
     background-attachment: scroll;
-    min-height: 890px;
+    min-height: 950px;
+    height: 100%;
+    background-repeat: repeat-y;
 }   
 
 .Spacers p{
@@ -128,3 +130,135 @@ body {
 			color: #ffffff;
 			margin-bottom: 10px;
 		}
+		
+		/* Chat containers */
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* Darker chat container */
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+/* Clear floats */
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Style images */
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+/* Style the right image */
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
+}
+
+.output{
+    background-color: white;
+    height: 450px;
+    width: 850px;
+   margin-left: 250px;
+   border-radius: 15px;
+    
+}
+btn1{
+    float: right;
+}
+
+
+.tasks{
+    min-width: 300px;
+    height: 300px;
+    background-color: white;
+}
+
+.container center{
+    width: 400px;
+}
+
+
+
+.grid-container1, center{
+  display: grid;
+  align-content: center;
+  grid-template-columns: auto auto auto;
+  border-radius: 15px;
+  grid-gap: 15px;
+  background-color: white;  
+  padding: 30px;
+  width: 500px;
+  margin-left: 370px;
+  
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.images{
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    
+}
+
+.options{
+    background-color: teal;
+    border-radius: 15px;
+}
+
+
+.grid-container .center{
+   margin-top: 20px;
+   border-radius: 15px;
+   margin-left: 10px;
+   width: 50%;
+   background-color: white;
+   
+}
+
+.item2 {
+  align-content:  center;
+  text-align: center;
+  border: 15px solid teal;
+  border-radius: 25px;
+  margin: 10px;
+  margin-left: 220px;
+  background-color: white;
+  width: 60%;
+  margin-bottom: 20px;
+}
