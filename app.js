@@ -9,11 +9,12 @@ var app = express();
 // var flash    = require('connect-flash');
 
 
-
+var tasks;
+var res;
 var fs = require('fs');
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:true}));
-var task = ["buy socks", "practise with nodejs"];
+//var task = ["buy socks", "practise with nodejs"];
 //placeholders for removed task
 var complete = ["finish jquery"];
 
@@ -132,6 +133,7 @@ console.log("welcome to the communication page");
 app.get('/contact', function(req, res){
 res.render("contact");
  console.log("welcome to the contacts page");
+ console.log(res);
  });
 
 // route to render create communication page
@@ -147,6 +149,12 @@ console.log("welcome to the assistance page");
 });
 
 // route to render create communication page
+app.get('/tasklist', function(req, res){
+res.render("tasklist");
+console.log("welcome to the task list page");
+});
+
+// route to render create training page
 // app.get('/training', function(req, res){
 // res.render("training");
 // console.log("welcome to the training page");
@@ -161,51 +169,109 @@ console.log("welcome to the registration page");
 ////////////////////////////////////////////SCHEDULE///////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//the schedule page with the task choices
-var task = ["do node practise", "do your paperwork", "contact your service provider", "Schedule a meeting with HR"];
-//post route for adding new task
-app.post('/addtask', function (req, res) {
-    var newTask = req.body.newtask;
-//add the new task from the post route into the array
-    task.push(newTask);
-//after adding to the array go back to the root route
-    res.redirect("schedule");
-});
-//render the ejs and display added task, task(index.ejs) = task(array)
-app.get("schedule", function(req, res) {
-    res.render("schedule", { task: task});
-});
+//*************Add Contact Details***************//
 
-//post route for adding new task 
-app.post("/addtask", function(req, res) {
-    var newTask = req.body.newtask;
-    //add the new task from the post route
-    task.push(newTask);
-    res.redirect("schedule");
-});
 
-app.post("/removetask", function(req, res) {
-    var complete;
-    var completeTask = req.body.check;
-    //check for the "typeof" the different completed task, then add into the complete task
-    if (typeof completeTask === "string") {
-        complete.push(completeTask);
-        //check if the completed task already exits in the task when checked, then remove it
-        task.splice(task.indexOf(completeTask), 1);
-    } else if (typeof completeTask === "object") {
-        for (var i = 0; i < completeTask.length; i++) {
-            complete.push(completeTask[i]);
-            task.splice(task.indexOf(completeTask[i]), 1);
+    // Write a function to find the max id in JSON file
+    app.post('/addtask', function(req,res){
+        
+    function getMax(tasks, id) {
+        var max;
+        var tasks;
+        
+        for (var i=0; i<tasks.length; i++) {
+            if(!max || parseInt(tasks[i][id]) > parseInt(max[id]));
+            max = tasks[i];
         }
-    }
-    res.redirect("schedule");
+        console.log("The max id is " + max);
+        return max;
+}
+   var tasks;
+   var maxCid = getMax(tasks, "id");
+   var newId = maxCid.id + 1; // make a new variable for id which is 1 larger than the current max
+    
+    console.log("New id is: " + newId);
+    // creating a new JSON object
+    
+    var contactsx = {
+        id: newId,
+        type: req.body.type,
+        description: req.body.description,
+        priority: req.body.priority,
+        time: req.body.time
+    };
+    var json = JSON.stringify(tasks); // we tell the application to get our JSON readdy to modify
+    // Push the data back to the JSON file
+    
+    fs.readFile('./model/tasks.json', 'utf8', function readfileCallback(err){
+        if(err){
+            throw(err);
+            
+        } else {
+            
+          tasks.push(contactsx);  // add the new contact to the JSON file
+          json = JSON.stringify(tasks, null, 4); // structure the new data nicely in the JSON file
+          fs.writeFile('./model/tasks.json', json, 'utf8');
+        }
+    });
+    console.log(tasks);
+    //res.redirect('/tasklist');
+    res.render("tasklist", { tasks: tasks});
 });
 
-//render the ejs and display added task, completed task
-app.get("schedule", function(req, res) {
-    var complete;
-    res.render("schedule", { task: task, complete: complete });
-});
+
+
+
+
+
+
+
+
+// //the schedule page with the task choices
+// var task = ["do node practise", "do your paperwork", "contact your service provider", "Schedule a meeting with HR"];
+// //post route for adding new task
+// app.post('/addtask', function (req, res) {
+//     var newTask = req.body.newtask;
+// //add the new task from the post route into the array
+//     task.push(newTask);
+// //after adding to the array go back to the root route
+//     res.redirect("schedule");
+// });
+// //render the ejs and display added task, task(index.ejs) = task(array)
+// app.get("schedule", function(req, res) {
+//     res.render("schedule", { task: task});
+// });
+
+// //post route for adding new task 
+// app.post("/addtask", function(req, res) {
+//     var newTask = req.body.newtask;
+//     //add the new task from the post route
+//     task.push(newTask);
+//     res.redirect("schedule");
+// });
+
+// app.post("/removetask", function(req, res) {
+//     var complete;
+//     var completeTask = req.body.check;
+//     //check for the "typeof" the different completed task, then add into the complete task
+//     if (typeof completeTask === "string") {
+//         complete.push(completeTask);
+//         //check if the completed task already exits in the task when checked, then remove it
+//         task.splice(task.indexOf(completeTask), 1);
+//     } else if (typeof completeTask === "object") {
+//         for (var i = 0; i < completeTask.length; i++) {
+//             complete.push(completeTask[i]);
+//             task.splice(task.indexOf(completeTask[i]), 1);
+//         }
+//     }
+//     res.redirect("schedule");
+// });
+
+// //render the ejs and display added task, completed task
+// app.get("schedule", function(req, res) {
+//     var complete;
+//     res.render("schedule", { task: task, complete: complete });
+// });
 
 
 ///////////////////////////////////////////TRAINING////////////////////////////////////////////////////////////////
@@ -215,7 +281,7 @@ app.get("schedule", function(req, res) {
 
 
 
-// Route to show all characters from database 
+// Route to show all training details from database 
 app.get('/training', function(req, res){
     
     let sql = 'SELECT * FROM training';
@@ -294,22 +360,7 @@ app.get('/softwaretraining', function(req, res){
  
 }); 
 
-//display the training selection
-// app.post("/training", function(req, res) {
-//     res.render("training");
-// });
 
-// Route to show all characters from database 
-// app.get('/training', function(req, res){
-    
-//     let sql = 'SELECT * FROM training';
-//     let query = db.query(sql, (err,res1) => {
-//         if(err) throw err;
-//         //res.render('training', {res1});
-//         console.log(res1);
-//     });
-    
-// });
 
 
 //  // function to clear training selection
@@ -349,63 +400,63 @@ app.get('/softwaretraining', function(req, res){
 //CODE FOR SHOWING THE CONTACT OPTIONS ON THE CONTACTS PAGE
 
 //display the contacts selection
-app.get("contact", function(req, res) {
-    res.render("contact");
-});
+// app.get("contact", function(req, res) {
+//     res.render("contact");
+// });
 
 
 
 
 // Route to show all information from users 
 app.get('/contact', function(req, res){
-    var res1;
-    var users;
-    let sql = 'SELECT * FROM users';
-    let query = db.query(sql, (err,res1) => {
+    
+        let sql = 'SELECT * FROM users';
+        
+    let query = db.query(sql, (err,res) => {
         
         if(err) throw err;
         
-//         //res.render('contact', {res1});
-        console.log(res1);
+      res.render('contact', {res});
+        console.log(res);
     });
-    
+   // console.log(res);
 });
 
 
 // // Route to show all details for the contacts
 app.get('/contact', function(req, res){
-    var res1;
+    
     let sql = 'SELECT deptId, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="a" ORDER by LName asc';
-    let query = db.query(sql, (err,res1) => {
+    let query = db.query(sql, (err,res) => {
         
         if(err) throw err;
         
-        res.render('contact', {res1});
-        console.log(res1);
+        res.render('contact', {res});
+        console.log(res);
     });
-    
+    console.log(res);
 });
 
 // //route for showing all the contacts for the accountancy Department
 app.get('/accountancycontact', function(req, res){
     let sql = 'SELECT deptId, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="b" ORDER by LName asc';
-    let query = db.query(sql, (err, res1) => {
+    let query = db.query(sql, (err, res) => {
         if(err) throw err;
-        res.render('contact', {res1});
-        console.log(res1);
+        res.render('contact', {res});
+        
         
     }); 
-         
+       
  
 });  
 
 // //route for showing all the contacts for the customer service Department
 app.get('/customerservicecontact', function(req, res){
     let sql = 'SELECT deptId, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="c" ORDER by LName asc';
-    let query = db.query(sql, (err, res1) => {
+    let query = db.query(sql, (err, res) => {
         if(err) throw err;
-        res.render('contact', {res1});
-        console.log(res1);
+        res.render('contact', {res});
+        console.log(res);
         
     }); 
          
@@ -415,10 +466,10 @@ app.get('/customerservicecontact', function(req, res){
 // //route for showing all the contacts for the customer service Department
 app.get('/marketingcontact', function(req, res){
     let sql = 'SELECT deptId, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="d" ORDER by LName asc';
-    let query = db.query(sql, (err, res1) => {
+    let query = db.query(sql, (err, res) => {
         if(err) throw err;
-        res.render('contact', {res1});
-        console.log(res1);
+        res.render('contact', {res});
+        console.log(res);
         
     }); 
          
@@ -428,10 +479,10 @@ app.get('/marketingcontact', function(req, res){
 // //route for showing all the contacts for the customer service Department
 app.get('/salescontact', function(req, res){
     let sql = 'SELECT deptId, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="e" ORDER by LName asc';
-    let query = db.query(sql, (err, res1) => {
+    let query = db.query(sql, (err, res) => {
         if(err) throw err;
-        res.render('contact', {res1});
-        console.log(res1);
+        res.render('contact', {res});
+        console.log(res);
         
     }); 
          
@@ -440,11 +491,11 @@ app.get('/salescontact', function(req, res){
 
 //route for showing all the contacts for the customer service Department
 app.get('/softwarecontact', function(req, res){
-       let sql = 'SELECT deptId, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="e" ORDER by LName asc';
-    let query = db.query(sql, (err, res1) => {
+      let sql = 'SELECT deptId, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="e" ORDER by LName asc';
+    let query = db.query(sql, (err, res) => {
         if(err) throw err;
-        res.render('training', {res1});
-        console.log(res1);
+        res.render('training', {res});
+        console.log(res);
         
     }); 
          
