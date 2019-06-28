@@ -215,8 +215,8 @@ console.log("welcome to the registration page");
         }
     });
     console.log(tasks);
-    //res.redirect('/tasklist');
-    res.render("tasklist", { tasks: tasks});
+    res.redirect('/tasklist', { tasks: tasks});
+    //res.render("tasklist", { tasks: tasks});
 });
 
 
@@ -412,30 +412,30 @@ app.get('/contact', function(req, res){
     
         let sql = 'SELECT * FROM users';
         
-    let query = db.query(sql, (err,res) => {
+    let query = db.query(sql, (err,res1) => {
         
         if(err) throw err;
         
-      res.render('contact', {res});
-        console.log(res);
+      res.render('contact', {res1});
+        console.log(res1);
     });
    // console.log(res);
 });
 
 
 // // Route to show all details for the contacts
-app.get('/contact', function(req, res){
+// app.get('/contact', function(req, res){
     
-    let sql = 'SELECT deptId, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="a" ORDER by LName asc';
-    let query = db.query(sql, (err,res) => {
+//     let sql = 'SELECT deptId, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="a" ORDER by LName asc';
+//     let query = db.query(sql, (err,res) => {
         
-        if(err) throw err;
+//         if(err) throw err;
         
-        res.render('contact', {res});
-        console.log(res);
-    });
-    console.log(res);
-});
+//         res.render('contact', {res});
+//         console.log(res);
+//     });
+//     console.log(res);
+// });
 
 // //route for showing all the contacts for the accountancy Department
 app.get('/accountancycontact', function(req, res){

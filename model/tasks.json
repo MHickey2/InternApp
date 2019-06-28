@@ -1,42 +1,42 @@
 [
     {
-        "Task id": 1,
+        "id": 1,
         "Description": "Work",
         "priority": "Medium",
         "time": "Study for the New Project"
     },
     {
-        "Task id": 2,
+        "id": 2,
         "Description": "Work",
         "priority": "High",
         "time": "Work on the requirements doc for ux meeting"
     },
     {
-        "Task id": 3,
+        "id": 3,
         "Description": "Home",
         "priority": "Medium",
         "time": "Get in contact with the Service Company"
     },
     {
-        "Task id": 4,
+        "id": 4,
         "Description" : "Study",
         "priority": "Low",
         "time": "make the wireframes for the website"
     },
     {
-        "Task id": 5,
+        "id": 5,
         "Description": "Home",
         "priority": "Low",
         "time": "Do the recycling for thursday"
     },
     {
-        "Task id": 6,
+        "id": 6,
         "Description": "Work",
         "priority": "High",
         "time": "Put notes together for the presentation"
     },
     {
-        "Task id": 7,
+        "id": 7,
         "Description": "Home",
         "priority": "High",
         "time": "Sort out the Kitchen cupboards"
