@@ -1,44 +1,51 @@
 [
     {
         "id": 1,
-        "Description": "Work",
+        "type": "Work",
         "priority": "Medium",
-        "time": "Study for the New Project"
+        "description": "Study for the New Project",
+        "time": 9
     },
     {
         "id": 2,
-        "Description": "Work",
+        "type": "Work",
         "priority": "High",
-        "time": "Work on the requirements doc for ux meeting"
+        "description": "Work on the requirements doc for ux meeting",
+        "time": 11
     },
     {
         "id": 3,
-        "Description": "Home",
+        "type": "Home",
         "priority": "Medium",
-        "time": "Get in contact with the Service Company"
+        "description": "Get in contact with the Service Company",
+        "time": 4
     },
     {
         "id": 4,
-        "Description" : "Study",
+        "type": "Study",
         "priority": "Low",
-        "time": "make the wireframes for the website"
+        "description": "make the wireframes for the website",
+        "time": 4
     },
     {
         "id": 5,
-        "Description": "Home",
+        "type": "Home",
         "priority": "Low",
-        "time": "Do the recycling for thursday"
+        "description": "Do the recycling for thursday",
+        "time": 9
     },
     {
         "id": 6,
-        "Description": "Work",
+        "type": "Work",
         "priority": "High",
-        "time": "Put notes together for the presentation"
+        "description": "Put notes together for the presentation",
+        "time": 7
     },
     {
         "id": 7,
-        "Description": "Home",
+        "type": "Home",
         "priority": "High",
-        "time": "Sort out the Kitchen cupboards"
+        "description": "Sort out the Kitchen cupboards",
+        "time": 6
     }
 ]

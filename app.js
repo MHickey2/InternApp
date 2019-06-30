@@ -47,7 +47,7 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-
+var tasks = require("./model/tasks.json");
 
 // var server = require('http').createServer(app);
 // var io = require('socket.io')(server);
@@ -150,8 +150,9 @@ console.log("welcome to the assistance page");
 
 // route to render create communication page
 app.get('/tasklist', function(req, res){
-res.render("tasklist");
-console.log("welcome to the task list page");
+res.render("tasklist", {tasks:tasks}); // res.render command to display the contact.json file in fanclub page
+console.log("welcome to the stored tasks page");
+
 });
 
 // route to render create training page
@@ -169,7 +170,7 @@ console.log("welcome to the registration page");
 ////////////////////////////////////////////SCHEDULE///////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//*************Add Contact Details***************//
+//*************Add task Details***************//
 
 
     // Write a function to find the max id in JSON file
@@ -177,8 +178,7 @@ console.log("welcome to the registration page");
         
     function getMax(tasks, id) {
         var max;
-        var tasks;
-        
+       
         for (var i=0; i<tasks.length; i++) {
             if(!max || parseInt(tasks[i][id]) > parseInt(max[id]));
             max = tasks[i];
@@ -186,7 +186,7 @@ console.log("welcome to the registration page");
         console.log("The max id is " + max);
         return max;
 }
-   var tasks;
+   
    var maxCid = getMax(tasks, "id");
    var newId = maxCid.id + 1; // make a new variable for id which is 1 larger than the current max
     
@@ -215,8 +215,51 @@ console.log("welcome to the registration page");
         }
     });
     console.log(tasks);
-    res.redirect('/tasklist', { tasks: tasks});
-    //res.render("tasklist", { tasks: tasks});
+    res.redirect('/tasklist');
+   
+});
+console.log(tasks);
+console.log(tasks.length);
+
+
+//*********** Function to delete a task **************//
+
+app.get('/deleteTask/:id', function(req,res){
+    
+    var json = JSON.stringify(tasks);
+     // Get the id we want to delete from the URL parameter 
+    var keyToFind = parseInt(req.params.id); 
+    
+    var data = tasks; // Declare the json file as a variable called data
+    
+    // lets map the data and find the information we need
+    var index = data.map(function(tasks){return tasks.id;}).indexOf(keyToFind);
+    
+    // JavaScript allows us to splice our JSON data
+    
+    tasks.splice(index, 1); // delete only one item from the position of the index variable above
+    
+      
+      json = JSON.stringify(tasks, null, 4); // structure the new data nicely in the JSON file
+        fs.writeFile('./model/tasks.json', json, 'utf8');
+
+    console.log("the task has been removed!");    
+    res.redirect('/tasklist');
+
+});
+
+
+//***************** render route to edit task *************// 
+//function to add task update page
+app.get('/taskUpdate/:id', function(req,res){
+    console.log("task update page rendered");
+    function chooseTask(indOne){
+        return indOne.id === parseInt(req.params.id);
+    }
+    
+    var indOne = tasks.filter(chooseTask);
+        res.render('taskUpdate', {indOne:indOne});
+        console.log(indOne);
 });
 
 
@@ -227,51 +270,7 @@ console.log("welcome to the registration page");
 
 
 
-// //the schedule page with the task choices
-// var task = ["do node practise", "do your paperwork", "contact your service provider", "Schedule a meeting with HR"];
-// //post route for adding new task
-// app.post('/addtask', function (req, res) {
-//     var newTask = req.body.newtask;
-// //add the new task from the post route into the array
-//     task.push(newTask);
-// //after adding to the array go back to the root route
-//     res.redirect("schedule");
-// });
-// //render the ejs and display added task, task(index.ejs) = task(array)
-// app.get("schedule", function(req, res) {
-//     res.render("schedule", { task: task});
-// });
 
-// //post route for adding new task 
-// app.post("/addtask", function(req, res) {
-//     var newTask = req.body.newtask;
-//     //add the new task from the post route
-//     task.push(newTask);
-//     res.redirect("schedule");
-// });
-
-// app.post("/removetask", function(req, res) {
-//     var complete;
-//     var completeTask = req.body.check;
-//     //check for the "typeof" the different completed task, then add into the complete task
-//     if (typeof completeTask === "string") {
-//         complete.push(completeTask);
-//         //check if the completed task already exits in the task when checked, then remove it
-//         task.splice(task.indexOf(completeTask), 1);
-//     } else if (typeof completeTask === "object") {
-//         for (var i = 0; i < completeTask.length; i++) {
-//             complete.push(completeTask[i]);
-//             task.splice(task.indexOf(completeTask[i]), 1);
-//         }
-//     }
-//     res.redirect("schedule");
-// });
-
-// //render the ejs and display added task, completed task
-// app.get("schedule", function(req, res) {
-//     var complete;
-//     res.render("schedule", { task: task, complete: complete });
-// });
 
 
 ///////////////////////////////////////////TRAINING////////////////////////////////////////////////////////////////

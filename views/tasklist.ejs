@@ -7,21 +7,25 @@
    
               <div class="row">
     
-                      <h1 class="center">Welcome to the Task List Page</h1>
+                      <h1 class="center">Welcome to the Tasks List</h1>
     
-                        <div class="grid-container2">
+                        <div class="grid-container">
                                 <% tasks.forEach(function(tasks) { %>
                                         <div class="item2">     
                                             <div class="item">
                                                   <h1 class="itemtitle">Id: <%= tasks.id %></h1>
-                                                  <h1 class="itemp">Name: <%= tasks.type %> </h1>
-                                                  <h1 class="itemp">Description: <%= tasks.description %> </h1>
+                                                  <h1 class="itemp">Type: <%= tasks.type %> </h1>
                                                   <h1 class="itemp">Priority: <%= tasks.priority %> </h1>
+                                                  <h1 class="itemp">Description: <%= tasks.description %> </h1>
                                                   <h1 class="itemp">Time: <%= tasks.time %> </h1>
-                                                  <a href="/contactUpdate/<%= contact.id %>" class="button">Update Contact</a>
-                                                  <a href="/deletecontact/<%= contact.id %>" class="button">Delete Me!</a>
-                                                  <br><br>
-                                                  <a href="/onecontact/<%= contact.id %>">View Contact</a><br>
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  <a href="/taskUpdate/<%= tasks.id %>" class="button">Update Task</a>
+                                                  <a href="/deleteTask/<%= tasks.id %>" class="button">Delete Task</a>
+                                                  <a href="/onetask/<%#= tasks.id %>"   class="button">View Task</a>
+                                                  <br>
     <br>
     <br>                                    </div>
                                         </div>
