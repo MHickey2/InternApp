@@ -3,13 +3,40 @@
   <head>
        <meta charset="UTF-8">
        <title>Intern Contacts Page</title>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
        <link rel="stylesheet" href="../app.css" type="text/css">
   </head>
+  <script>
+       
+//       $(document).ready(function() {
+//  $(".item").hide();
+
+// });
+
+
+
+$(document).ready(function() {
+$(".images").click(function() {
+$(".item").show(5000);
+
+})
+
+});
+
+$(document).ready(function() {
+$(".images").click(function() {
+$(".item").hide();
+
+})
+
+// });
+
+</script>
      
               <% include ../partial/header %>
                
     <div class="center">
-    <h2>Choose to see the Contacts from your Department</h2>
+    <h2>Choose Tile to see the Contact options from your Department</h2>
     <br>
    
 
@@ -26,6 +53,8 @@
 <br>
 </div>
 <br>
+
+<body>
 
 <div class="grid-container">
             

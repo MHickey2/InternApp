@@ -130,11 +130,11 @@ console.log("welcome to the communication page");
 });
 
 //route to render create contact page
-app.get('/contact', function(req, res){
-res.render("contact");
- console.log("welcome to the contacts page");
- console.log(res);
- });
+// app.get('/contact', function(req, res){
+// res.render("contact");
+//  console.log("welcome to the contacts page");
+//  console.log(res);
+//  });
 
 // route to render create communication page
 app.get('/schedule', function(req, res){
@@ -263,6 +263,21 @@ app.get('/taskUpdate/:id', function(req,res){
 });
 
 
+//*************function to see individual task**************//
+
+app.get('/onetask/:id', function(req, res) {
+  var json = JSON.stringify(tasks);
+     // Get the id we want to delete from the URL parameter 
+     var keyToFind = parseInt(req.params.id); 
+     var data = tasks;
+      // lets map the data and find the information we need
+    var index1 = data.map(function(tasks){return tasks.id;}).indexOf(keyToFind);
+   
+  
+  console.log(req.params.id);
+  res.render("onetask", {tasks: tasks, c: index1});
+  console.log("individual task page has now been rendered");    // the log function outputs data to the terminal. 
+});
 
 
 
@@ -418,7 +433,7 @@ app.get('/contact', function(req, res){
       res.render('contact', {res1});
         console.log(res1);
     });
-   // console.log(res);
+    
 });
 
 
