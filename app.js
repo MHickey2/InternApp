@@ -251,14 +251,14 @@ app.get('/deleteTask/:id', function(req,res){
 
 //***************** render route to edit task *************// 
 //function to add task update page
-app.get('/taskUpdate/:id', function(req,res){
+app.get('/taskupdate/:id', function(req,res){
     console.log("task update page rendered");
     function chooseTask(indOne){
         return indOne.id === parseInt(req.params.id);
     }
     
     var indOne = tasks.filter(chooseTask);
-        res.render('taskUpdate', {indOne:indOne});
+        res.render('taskupdate', {indOne:indOne});
         console.log(indOne);
 });
 
@@ -453,10 +453,10 @@ app.get('/contact', function(req, res){
 
 // //route for showing all the contacts for the accountancy Department
 app.get('/accountancycontact', function(req, res){
-    let sql = 'SELECT deptId, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="b" ORDER by LName asc';
-    let query = db.query(sql, (err, res) => {
+    let sql = 'SELECT deptId, image, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="a" ORDER by LName asc';
+    let query = db.query(sql, (err, res1) => {
         if(err) throw err;
-        res.render('contact', {res});
+        res.render('contact', {res1});
         
         
     }); 
@@ -466,10 +466,10 @@ app.get('/accountancycontact', function(req, res){
 
 // //route for showing all the contacts for the customer service Department
 app.get('/customerservicecontact', function(req, res){
-    let sql = 'SELECT deptId, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="c" ORDER by LName asc';
-    let query = db.query(sql, (err, res) => {
+    let sql = 'SELECT deptId, image, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="b" ORDER by LName asc';
+    let query = db.query(sql, (err, res1) => {
         if(err) throw err;
-        res.render('contact', {res});
+        res.render('contact', {res1});
         console.log(res);
         
     }); 
@@ -479,10 +479,10 @@ app.get('/customerservicecontact', function(req, res){
 
 // //route for showing all the contacts for the customer service Department
 app.get('/marketingcontact', function(req, res){
-    let sql = 'SELECT deptId, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="d" ORDER by LName asc';
-    let query = db.query(sql, (err, res) => {
+    let sql = 'SELECT deptId, image, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="c" ORDER by LName asc';
+    let query = db.query(sql, (err, res1) => {
         if(err) throw err;
-        res.render('contact', {res});
+        res.render('contact', {res1});
         console.log(res);
         
     }); 
@@ -492,10 +492,10 @@ app.get('/marketingcontact', function(req, res){
 
 // //route for showing all the contacts for the customer service Department
 app.get('/salescontact', function(req, res){
-    let sql = 'SELECT deptId, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="e" ORDER by LName asc';
-    let query = db.query(sql, (err, res) => {
+    let sql = 'SELECT deptId, image, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="d" ORDER by LName asc';
+    let query = db.query(sql, (err, res1) => {
         if(err) throw err;
-        res.render('contact', {res});
+        res.render('contact', {res1});
         console.log(res);
         
     }); 
@@ -505,10 +505,10 @@ app.get('/salescontact', function(req, res){
 
 //route for showing all the contacts for the customer service Department
 app.get('/softwarecontact', function(req, res){
-      let sql = 'SELECT deptId, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="e" ORDER by LName asc';
-    let query = db.query(sql, (err, res) => {
+      let sql = 'SELECT deptId, image, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="e" ORDER by LName asc';
+    let query = db.query(sql, (err, res1) => {
         if(err) throw err;
-        res.render('training', {res});
+        res.render('contact', {res1});
         console.log(res);
         
     }); 
