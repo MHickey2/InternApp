@@ -49,8 +49,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 var tasks = require("./model/tasks.json");
 
-// var server = require('http').createServer(app);
-// var io = require('socket.io')(server);
+
+
+const http = require('http').createServer(app);
+var io = require('socket.io')(http);
 
 //call sql into action
 var mysql = require('mysql');
@@ -123,11 +125,17 @@ console.log("index page has been displayed");
 ////////////////////////////////////ROUTES////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// route to render create communication page
+// to render create communication page
 app.get('/communication', function(req, res){
 res.render("communication");
 console.log("welcome to the communication page");
 });
+
+// app.get('/communication', function(req, res){
+//   res.sendFile(__dirname + 'communication');
+//   console.log("welcome to the communication page");
+// });
+
 
 //route to render create contact page
 // app.get('/contact', function(req, res){
@@ -263,6 +271,33 @@ app.get('/taskupdate/:id', function(req,res){
 });
 
 
+//************* post request to edit contact***************// 
+
+app.post('/taskupdate/:id', function(req,res){
+    
+    var json = JSON.stringify(tasks);
+    var keyToFind = parseInt(req.params.id);  // Find the data we need to edit
+    var data = tasks; // Declare the json file as a variable called data
+    var index = data.map(function(tasks){return tasks.id;}).indexOf(keyToFind); // map out data and find what we need
+    
+      
+        var n = req.body.newType;
+        var i = parseInt(req.body.newId);
+        var c = req.body.newDescription;
+        var e = req.body.newPriority;
+        var r = req.body.newTime;
+         
+         tasks.splice(index, 1, {id: i, type: n, description: c, priority: e, time: r} ); 
+         json = JSON.stringify(tasks, null, 4);
+         fs.writeFile("./model/tasks.json", json, 'utf8' );
+    
+    console.log(n,i,c,e,r);
+    res.redirect("/tasklist");
+    console.log("task update page is rendered");
+});
+
+
+
 //*************function to see individual task**************//
 
 app.get('/onetask/:id', function(req, res) {
@@ -392,14 +427,45 @@ app.get('/softwaretraining', function(req, res){
 
 
 
+//-----------------------------------------------------------------------------
+// Configure web sockets.
+//-----------------------------------------------------------------------------
+io.sockets.on("connection", function(socket) {
+
+    socket.on("chat-message", function(message) {
+        io.sockets.emit("chat-message", message);
+    });
+
+});
+
+
+
+
 
 ///////////////////////////////////////////COMMUNICATION//////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //CODE FOR THE CHAT ROOM
 
+io.sockets.on('connection', function(socket) {
+    socket.on('username', function(username) {
+        socket.username = username;
+        io.emit('is_online', '🔵 <i>' + socket.username + ' join the chat..</i>');
+    });
 
+    socket.on('disconnect', function(username) {
+        io.emit('is_online', '🔴 <i>' + socket.username + ' left the chat..</i>');
+    })
 
+    socket.on('chat_message', function(message) {
+        io.emit('chat_message', '<strong>' + socket.username + '</strong>: ' + message);
+    });
+
+});
+
+//   http.listen(3000, function() {
+//     console.log('listening on *:8080');
+// });
 
 
 

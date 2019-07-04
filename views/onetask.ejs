@@ -1,0 +1,34 @@
+<body background="../dino.jpg" width="1280px" height="1200px">   
+    <% include ../partial/header %>
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br> 
+        <!--my page info goes here-->
+        <div class="row">
+              <div class="container2">
+                  <ul class="nobull">
+                      <li><%= tasks[c].name %></li> 
+                      <li><%= tasks[c].type %> </li> 
+                      <li><%= tasks[c].description %></li>
+                      <li><%= tasks[c].priority %> </li> 
+                      <li><%= tasks[c].time %></li>
+                      
+                      <br>
+                      <br>
+                      <li><a href="/tasklist">Back to Tasklist</a></li>
+                      <br>                  
+                   </ul>
+              </div>
+        </div>
+  <br>
+  <br>
+  <br> 
+
+   <% include ../partial/footer %>
+ </body>

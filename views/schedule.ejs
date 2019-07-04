@@ -14,10 +14,10 @@
                 <form  accept-charset="UTF-8" action ="/addtask" method="POST">
                     <div class="item">
                     <label for="task id">Task Id:</label>
-                    <input name="task id" type="text" minlength="6" placeholder="Please enter your name", pattern='[a-zA-Z][a-zA-Z ]{2,}', title='Please enter your name', required/>
+                    <input name="task id" type="text" minlength="1" placeholder="Please enter your name",  title='Please enter your name', required/>
                     <br>
                     <label for="type">Type:</label>
-                    <input name="type" type="text" placeholder="Please enter the type of task", pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Correct email Format', required/>
+                    <input name="type" type="text" placeholder="Please enter the type of task",  title='Correct email Format', required/>
                     <br>
                     <label for="description">Description:</label>
                     <input name="description" type="text" minlength="10" placeholder="Please enter task details",  pattern='[a-zA-Z][a-zA-Z ]{4,}', title='Did you forget your Comment', required />

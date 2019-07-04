@@ -232,9 +232,15 @@ input[type=text], select {
 .images{
     width: 200px;
     height: 200px;
-    padding: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
 }
+
+.nobull {
+list-style-type: none;
+}
+
 
 .options{
     background-color: teal;
@@ -261,4 +267,18 @@ input[type=text], select {
   background-color: white;
   width: 60%;
   margin-bottom: 20px;
+}
+
+.container2{
+    color: white;
+    font-size: 30px;
+    margin: auto;
+    border-radius: 15px solid black;
+    background-color: lightblue;
+    font: 'comic sans';
+    font-size: 30px;
+    color: blue;
+    width: 45%;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
