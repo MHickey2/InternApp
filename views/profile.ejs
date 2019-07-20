@@ -1,0 +1,35 @@
+<% include ../partial/header %>
+
+<div class="row">
+    <div class="container">
+
+        <div class="item">
+            <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+
+        </div>
+
+        <div class="row">
+
+            <!-- LOCAL INFORMATION -->
+            <div class="item">
+
+
+
+                <p >
+                    <strong class="itemp">Id: </strong><%= users.deptId %><br>
+                    <strong class="itemp">username: </strong><%= users.username %><br>
+                    <strong class="itemp">username: </strong><%= users.email %><br>
+                    <strong class="itemp">password: </strong><%= users.password %>
+                </p>
+
+
+                <a href="/logout" class="button">Logout</a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<% include ../partial/footer %>

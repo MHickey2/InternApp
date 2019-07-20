@@ -1,0 +1,63 @@
+<body > 
+   <% include ../partial/header%> 
+
+
+  <head>
+
+       <title>Intern Schedule Page</title>
+       <link rel="stylesheet" href="../app.css" type="text/css">
+  </head>
+  
+        <h2 class="center">Scheduling</h2>
+        
+         
+         <a href="/tasklist" class="button">&nbsp;See Task List</a>
+         <br>
+            <div class="grid-container1">
+                
+                <form  accept-charset="UTF-8" action ="/addtask" method="POST">
+                    <div class="item">
+                    <label for="task id">Task Id:</label>
+                    <input name="task id" type="text" minlength="1" placeholder="Please enter your name",  title='Please enter your name', required/>
+                    <br>
+                    <label for="type">Type:</label>
+                    <input name="type" type="text" placeholder="Please enter the type of task",  title='Correct email Format', required/>
+                    <br>
+                    <label for="description">Description:</label>
+                    <input name="description" type="text" minlength="10" placeholder="Please enter task details",  pattern='[a-zA-Z][a-zA-Z ]{4,}', title='Did you forget your Comment', required />
+                    <br>
+                    <label for="priority">Priority:</label>
+                    <input name="priority" type="text" placeholder="priority level....." title='indicate the priority level', required />
+                    <br>
+                    <label for="time">Time:</label>
+                    <input name="time" type="text" placeholder="to be done by....." title='what is the time frame', required />
+                    <br>
+                    <button formaction="/Addtask" type="submit">Add Task</button>
+                </div>
+                    
+                    
+                </form>   
+                
+    </div>
+
+
+   <br>
+   <br>
+
+
+   <!--<button formaction="/removetask" type="submit"> Remove Task</button>-->
+                    <!--<button formaction="/seeAlltasks" type="submit"> View Tasks </button>-->
+                
+            </div>
+  
+  <br>
+   <br>
+ 
+
+             
+    
+    
+    <% include ../partial/footer %>
+</body> 
+
+

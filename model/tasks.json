@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "type": "Work",
+        "description": "Study for the New Project test",
+        "priority": "Medium",
+        "time": "9"
+    },
+    {
+        "id": 2,
+        "type": "Work",
+        "priority": "High",
+        "description": "Work on the requirements doc for ux meeting",
+        "time": 11
+    },
+    {
+        "id": 3,
+        "type": "Home",
+        "description": "Get in contact with the Service Company",
+        "priority": "Medium",
+        "time": "4"
+    },
+    {
+        "id": 4,
+        "type": "Study",
+        "priority": "Low",
+        "description": "make the wireframes for the website",
+        "time": 4
+    },
+    {
+        "id": 5,
+        "type": "Home",
+        "priority": "Low",
+        "description": "Do the recycling for thursday",
+        "time": 9
+    },
+    {
+        "id": 6,
+        "type": "Work",
+        "description": "Put notes together for the presentation today",
+        "priority": "High",
+        "time": "7"
+    }
+]

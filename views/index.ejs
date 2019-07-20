@@ -1,0 +1,85 @@
+  <body style="background-color: lightblue" > 
+   <% include ../partial/header%> 
+    
+
+ <head>
+    <meta charset="UTF-8">
+ <title>
+     Intern Assistance App
+ </title>
+ <link rel="stylesheet" href='app.css' type="text/css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<script src="/js/bootstrap.min.js"></script>
+<div class="imhold">
+ 
+</head>
+<br>
+<br>
+<div class="Spacers">
+    <h1 class="center">Welcome to the Intern Assistance Portal</h1>
+    <p>We hope you have a great experience with us and we hope we have provided all you need to make you comfortable in
+    your position. Login and Register to get up to date information on your role, We have provided you with all the information
+    you need, but if you want more please contact us. Welcome to the Company and we hope you enjoy the experience.</p>
+</div>
+
+
+<div class="row">
+<div class="container1">
+
+<div class="item">
+
+	<h1 class="center">Login</h1>
+
+	
+
+	<!-- LOGIN FORM -->
+	<div class="login-form">
+	<form action="/login" method="post">
+		<div class="form-group">
+			<label>Username</label>
+			<input type="text" class="form-control" name="username">
+		</div>
+				<div class="form-group">
+			<label>Email</label>
+			<input type="text" class="form-control" name="email">
+		</div>
+		<div class="form-group">
+			<label>Password</label>
+			<input type="password" class="form-control" name="password">
+		</div>
+
+		<button type="submit" class="button">Login</button>
+
+	
+	
+
+	<hr>
+
+	
+	<p> <br><a href="/registration" class="button">Register for a new Account</a></p>
+	
+		</form>
+</div>
+</div>
+
+</div>
+  </div>
+
+
+<!--<div class="login-form">-->
+<!--			<h1>login.ejs Form</h1>-->
+<!--			<form action="auth" method="POST">-->
+<!--				<input type="text" name="username" placeholder="Username" required>-->
+<!--				<input type="password" name="password" placeholder="Password" required>-->
+<!--				<input type="submit">-->
+			
+<!--			</form>-->
+<!--</div>-->
+<!--<br>-->
+<br>
+<br>
+<br>
+<% include ../partial/footer %>
+</body>

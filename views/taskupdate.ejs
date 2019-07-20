@@ -1,0 +1,47 @@
+<body>   
+    <% include ../partial/header %>   
+ 
+<br>
+<br>
+          <div class="grid-container">
+<br>
+<br>  
+                 <% indOne.forEach(function(tasks) { %>
+                      <h2 class="white">Update Task <%= tasks.id %></h2>
+              
+                          <form action="/taskupdate/<%= tasks.id %>" method="post">
+                              <div class="item">
+                                    <label for="id" name="id">ID: <%= tasks.id %></label>
+                                    <br />
+                                    <input name="newId" type="text"  value="<%= tasks.id %>" style="display: none;"/>
+                                    <br /> 
+                                    <label for="name">Type:</label>
+                                    <br />
+                                    <input name="newType" type="text" value="<%= tasks.type %>"/>
+                                    <br />
+                                    <label for="priority">Priority:</label>
+                                    <br />
+                                    <input name="newPriority" type="text"  value="<%= tasks.priority %>"/>
+                                    <br />
+                                    <label for="description">Description:</label>
+                                    <br />
+                                    <input name="newDescription" type="text" value="<%= tasks.description %>" />
+                                    <br />
+                                    <label for="time">Time:</label>
+                                    <br />
+                                    <input name="newTime" type="text" value="<%= tasks.time %>" />
+                                    <br />
+                                    <button>Update</button>
+                              </div>
+                          </form>
+                        
+                  <% }); %>    
+          </div>                                                                                          
+                   
+  <br>
+  <br>
+  <br>
+  <br>
+  
+    <% include ../partial/footer %>
+</body>  

@@ -1,0 +1,54 @@
+<body>
+<% include ../partial/header %>
+    <br>
+    <br>
+
+    <div class="row">
+    <br>
+    <br>
+        <h1 class="center">Please Register your Details</h1>
+    </div>
+    
+    <div class="grid-container1">
+            <form accept-charset="UTF-8" action="/add" method="post">
+
+                <div class="item">
+                    <label for="first name">First Name:</label>
+                    <input name="first name" type="text" minlength="6" placeholder="Please enter your first name", pattern='[a-zA-Z][a-zA-Z ]{2,}', title='Please enter your first name', required/>
+                    <br>
+                    <label for="last name">Last Name:</label>
+                    <input name="last name" type="text" minlength="6" placeholder="Please enter your last name", pattern='[a-zA-Z][a-zA-Z ]{2,}', title='Please enter your last name', required/>
+                    <br>
+                    <label for="user name">User Name:</label>
+                    <input name="user name" type="text" placeholder="Please enter your user name", pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Correct user name Format', required/>
+                    <br>
+                    <label for="password">Password:</label>
+                    <input name="password" type="text" placeholder="Please pick a password", pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Correct password Format', required/>
+                    <br>
+                    <label for="email">Email:</label>
+                    <input name="email" type="text" placeholder="Please enter your email address", pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Correct email Format', required/>
+                    <br>
+                    <br>
+                    <button formaction="/register" type="submit">Register</button>
+
+                </div>
+
+            </form>
+            
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        <% include ../partial/footer %>
+    </body>

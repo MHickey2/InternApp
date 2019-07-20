@@ -1,0 +1,101 @@
+<body>
+<% include ../partial/header %>
+<head>
+
+    <title>Intern Contact Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../app.css" type="text/css">
+
+    <script>
+
+
+       
+//       $(document).ready(function() {
+//  $(".item").hide();
+
+// });
+
+
+
+// $(document).ready(function() {
+// $(".images").click(function() {
+// $(".item").show(5000);
+//
+// })
+//
+// });
+//
+// $(document).ready(function() {
+// $(".images").click(function() {
+// $(".item").hide();
+//
+// });
+//
+//  });
+
+</script>
+  </head>
+
+               
+    <div class="center">
+    <h2>Choose a Tile to see the Contact options for your Department</h2>
+    <br>
+   
+
+
+<div class="options">
+    <br>
+    
+    
+<a href="/accountancycontact"><img src="accountancy.jpg" class="images" /></a>
+<a href="/customerservicecontact" ><img src="customer.jpg" class="images" /></a>
+<a href="/marketingcontact"><img src="marketing.png" class="images" /></a>
+<a href="/salescontact"><img src="sales.jpg" class="images" /></a>
+<a href="/softwarecontact"><img src="software.jpg" class="images" /></a>
+<br>
+</div>
+<br>
+    </div>
+
+
+<div class="grid-container">
+            
+        <% res1.forEach(function(users) { %>
+
+            <div class="item2">
+                <div class="item">
+<!--                    <h3 class="itemtitle">Id: <%= users.empId %></h3>-->
+                    <h3 class="itemp">employee Id: <%= users.empId %></h3>
+                    <img src="/<%= users.image %>" class="pimage"></image>
+                    <h3 class="itemp">Department Id: <%= users.deptId %></h3>
+                    <h3 class="itemp">Category Id: <%= users.catId %></h3>
+                    <h3 class="itemp">First Name: <%= users.FName %></h3>
+                    <h3 class="itemp">Last Name: <%= users.LName %></h3>
+                    <h3 class="itemp">Description: <%= users.Description %></h3>
+                    <h3 class="itemp">Email: <%= users.email %></h3>
+                    <h3 class="itemp">Phone No: <%= users.PhoneNo %></h3>
+                    <a href="/deletecontact/<%= users.empId %>" class="button">Delete Me!</a>
+                    <a href="/editcontact/<%= users.empId %>" class="button">Edit Me!</a>
+    <br>
+    <br> 
+                </div>
+            </div>
+
+
+        <% }); %>
+
+
+                    
+                    
+                   
+                    
+ 
+<br>
+ 
+<br>
+</div>
+<br>
+<br>
+        <% include ../partial/footer %>
+
+</body>

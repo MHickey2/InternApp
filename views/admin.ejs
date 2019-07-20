@@ -1,0 +1,51 @@
+<body.
+<% include ../partial/header %>
+
+<!--    <h1 class="center">Admin Tools</h1>-->
+
+<!--<h2>Update the Training Details</h2>-->
+
+<div class="grid-container">
+    <% res1.forEach(function(training) {%>
+        <form accept-charset="UTF-8" action="/edit/<%= training.deptId %>" method="post">
+            <div class="item">
+
+
+
+                <label for="name">Training Ref:</label>
+                <input name="trainingRef" type="text" value="<%= training.trainingRef %>" />
+
+                <label for="name">Id:</label>
+                <input name="deptId" type="text" value="<%= training.deptId %>" />
+
+                <label for="name">Type:</label>
+                <input name="type" type="text" value="<%= training.type %>" />
+
+                <label for="name">Locations:</label>
+                <input name="location" type="text" value="<%= training.location %>" />
+
+                <label for="name">From Date:</label>
+                <input name="fromDate" type="text" value="<%= training.fromDate %>" />
+
+                <label for="name">To Date:</label>
+                <input name="toDate" type="text" value="<%= training.toDate %>" />
+
+                <button class="button">Edit Training</button>
+                <br>
+            </div>
+        </form>
+    <% }); %>
+</div>
+<br>
+<br>
+<br>
+
+</div>
+
+<a href="/edit/<%= training.deptId %>" class="button">Edit Me!</a>
+
+<h1>A</h1>
+<% include ../partial/footer %>
+
+</body>
+

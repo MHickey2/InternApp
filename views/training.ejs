@@ -1,0 +1,105 @@
+<body>
+<% include ../partial/header %>
+<head>
+
+    <title>Intern Training Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../app.css" type="text/css">
+
+    <script>
+
+        //       $(document).ready(function() {
+        //  $(".item").hide();
+
+        // });
+
+
+
+        // $(document).ready(function() {
+        // $(".images").click(function() {
+        // $(".item").show(5000);
+        //
+        // })
+        //
+        // });
+        //
+        // $(document).ready(function() {
+        // $(".images").click(function() {
+        // $(".item").hide();
+        //
+        // });
+        //
+        //  });
+
+    </script>
+</head>
+
+
+<div class="center">
+    <h2>Choose a Tile to see the Training options for your Department</h2>
+    <br>
+
+
+
+    <div class="options">
+        <br>
+
+
+        <a href="/accountancytraining"><img src="accountancy.jpg" class="images" /></a>
+        <a href="/customerservicetraining" ><img src="customer.jpg" class="images" /></a>
+        <a href="/marketingtraining"><img src="marketing.png" class="images" /></a>
+        <a href="/salestraining"><img src="sales.jpg" class="images" /></a>
+        <a href="/softwaretraining"><img src="software.jpg" class="images" /></a>
+        <br>
+    </div>
+    <br>
+</div>
+
+
+
+    <div class="grid-container">
+            
+        <% res1.forEach(function(training) { %>
+
+            <div class="item2">
+                <div class="item">
+<!--                    <h3 class="itemtitle">Id: <%#= training.deptId %></h3>-->
+                    <h3 class="itemp">TrainingRef: <%= training.trainingRef %></h3>
+                    <h3 class="itemp">DeptId: <%= training.deptId %></h3>
+                    <h3 class="itemp">Type: <%= training.type %></h3>
+                    <h3 class="itemp">Location: <%= training.location %></h3>
+                    <!--<h3 class="itemp">Time: <%#= training.time %></h3>-->
+                    <h3 class="itemp">From Date: <%= training.fromDate %></h3>
+                    <h3 class="itemp">To Date: <%= training.toDate %></h3>
+                    <a href="/delete/<%= training.trainingRef %>" class="button">Delete Me!</a>
+                    <a href="/edit/<%= training.trainingRef %>" class="button">Edit Me!</a>
+<!--                    <a href="/show/<%#= training.chrId %>" class="button">See this Character!</a>-->
+
+    <br>
+    <br> 
+                </div>
+            </div>
+
+
+        <% }); %>
+<br>
+    <br>
+    <br>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+            
+    
+
+
+<br>
+<br>
+
+    </div>
+
+              <% include ../partial/footer %>
+
+</body>
