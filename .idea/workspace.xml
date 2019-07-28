@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45228c78-4af4-42fb-bec5-74e51ce17b41" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/app.css" afterDir="false" />
-    </list>
+    <list default="true" id="45228c78-4af4-42fb-bec5-74e51ce17b41" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -101,8 +97,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="338" column="23" selection-start-line="338" selection-start-column="23" selection-end-line="338" selection-end-column="23" />
+            <state relative-caret-position="273">
+              <caret line="346" column="18" lean-forward="true" selection-start-line="346" selection-start-column="18" selection-end-line="346" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -118,7 +114,17 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="michelle hickey" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="MHickey2" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="InternApp" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -154,10 +160,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-220" />
-    <option name="y" value="260" />
-    <option name="width" value="1935" />
-    <option name="height" value="1040" />
+    <option name="x" value="-63" />
+    <option name="y" value="-23" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -282,7 +288,7 @@
       <workItem from="1564165707125" duration="7101000" />
       <workItem from="1564257959414" duration="5842000" />
       <workItem from="1564333057211" duration="1476000" />
-      <workItem from="1564334577725" duration="1614000" />
+      <workItem from="1564334577725" duration="2419000" />
     </task>
     <task id="LOCAL-00001" summary="up to date project, authenthication needed">
       <created>1563618217123</created>
@@ -305,11 +311,25 @@
       <option name="project" value="LOCAL" />
       <updated>1563618670658</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="up to date project, authenthication needed">
+      <created>1564336274933</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1564336274933</updated>
+    </task>
+    <task id="LOCAL-00005" summary="project in webstorm">
+      <created>1564336483290</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1564336483290</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190226000" />
+    <option name="totallyTimeSpent" value="191031000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -321,24 +341,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-56" y="24" width="1552" height="840" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.86491936" visible="true" weight="0.105750166" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.86491936" visible="true" weight="0.105610564" />
       <window_info id="Structure" order="1" sideWeight="0.13416989" side_tool="true" weight="0.05851375" />
       <window_info id="npm" order="2" sideWeight="0.13508065" side_tool="true" weight="0.13245033" />
       <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="GitHub Pull Requests" visible="true" weight="0.32846716" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32796487" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49834764" visible="true" weight="0.193265" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49834764" weight="0.193265" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4990086" weight="0.21229868" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.329429" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4996691" weight="0.3293944" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4996691" weight="0.32796487" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50165236" side_tool="true" weight="0.2942899" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996691" weight="0.11566618" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996691" weight="0.4114202" />
       <window_info anchor="bottom" id="Thumbnails" order="11" visible="true" weight="0.329429" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.329429" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -413,7 +434,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="up to date project, authenthication needed" />
-    <option name="LAST_COMMIT_MESSAGE" value="up to date project, authenthication needed" />
+    <MESSAGE value="project in webstorm" />
+    <option name="LAST_COMMIT_MESSAGE" value="project in webstorm" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/chat.js">
@@ -595,8 +617,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="338" column="23" selection-start-line="338" selection-start-column="23" selection-end-line="338" selection-end-column="23" />
+        <state relative-caret-position="273">
+          <caret line="346" column="18" lean-forward="true" selection-start-line="346" selection-start-column="18" selection-end-line="346" selection-end-column="18" />
         </state>
       </provider>
     </entry>
