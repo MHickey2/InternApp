@@ -334,7 +334,9 @@ item {
     color: black;
     margin: auto;
     background-color: #81BEF7;
-    height: 5s00px;
+    height: 500px;
+    margin-left: auto;
+    margin-rgiht: auto;
 }
 
 input[type="text"] {
