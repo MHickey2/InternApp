@@ -7,7 +7,9 @@
    
               <div class="row">
     
-                      <h2 class="center">Welcome to the Tasks List</h2>
+                      <h2 class="center">Welcome to the Task List</h2>
+
+                  <a href="/schedule" class="button">&nbspBack to Schedule</a>
     
                         <div class="grid-container">
                                 <% tasks.forEach(function(tasks) { %>
@@ -23,7 +25,7 @@
                                                   
                                                   
                                                   <a href="/taskupdate/<%= tasks.id %>" class="button">Update Task</a>
-                                                  <a href="/deleteTask/<%= tasks.id %>" class="button">Delete Task</a><br>
+                                                  <a href="/deleteTask/<%= tasks.id %>" class="button">Delete Task</a><br><br>
                                                 <a href="/onetask/<%= tasks.id %>"   class="button">View Task</a>
                                                   <br>
     <br>

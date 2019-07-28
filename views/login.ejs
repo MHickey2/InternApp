@@ -1,9 +1,12 @@
+<body>
 <% include ../partial/header %>
 
+<title>Login Page</title>
+
 <div class="row">
-    <div class="container">
+    <div class="container1">
         <div class="item">
-            <h1><span class="fa fa-sign-in"></span> Login</h1>
+            <h1 class="center"><span class="fa fa-sign-in"></span> Login</h1>
 
             <!-- show any messages that come back with authentication -->
             <% if (message.length > 0) { %>
@@ -11,32 +14,38 @@
             <% } %>
 
             <!-- LOGIN FORM -->
-            <form action="/login" method="post">
-                <div class="form-group">
-                    <label>Username</label>
-                    <input type="text" class="form-control" name="username">
-                </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" class="form-control" name="password">
-                </div>
-                <div class="form-group">
-                    <label>Remember Me</label>
-                    <input type="checkbox" class="form-control" name="remember" value="yes">
-                </div>
+            <div class="border">
+                <form action="/login" method="post">
+                    <div class="form-group">
+                        <label class="clear">Username</label>
+                        <input type="text" name="username" class="form-control">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label class="clear">Password</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label class="clear">Remember Me<br></label>
+                        <input type="checkbox" class="form-control" name="remember" value="yes">
+                    </div>
 
-                <button type="submit" class="button">Login</button>
-            </form>
+                    <button type="submit" class="button">Login</button>
+                </form>
+                <br>
+            </div>
 
             <hr>
+
             <div class="item">
-                <p class="itemtitle">Need an account? <br> <a href="/signup" class="button">Signup</a></p>
-                <pclass="itemtitle">Or go <br><a href="/" class="button">home</a>.</p>
+                <p class="clear">Need an account? <br> <a href="/register" class="button">Register</a></p>
+                <p class="clear ">Or Go <br><a href="/" class="button">Home</a></p>
             </div>
         </div>
     </div>
+    <br>
 </div>
 
-
 <% include ../partial/footer %>
-
+</body>

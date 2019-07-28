@@ -9,11 +9,20 @@
   <title>Chat Page</title>
 </head>
 
-<body>
-<header>
-  <h2>Network Chat Tool</h2>
-</header>
 
+
+
+<!--<div style="float:left;width:100px;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y;">-->
+<!--  <b>Users</b>-->
+<!--  <div id="userlist">-->
+<!--    <p id="userlist></p>-->
+<!--  </div>-->
+</div>
+<br>
+<header>
+  <h1 class="center">Intern Chat Page</h1>
+</header>
+<br>
 <section>
   <div id="change_username">
     <input id="username" type="text" />
@@ -35,6 +44,21 @@
 <br>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="chat.js"></script>
+<script>
+socket.on('connect', function (){
+socket.emit('adduser', prompt("What's your name?"));
+});
+
+var userList = [];
+
+socket.on('update', function (users){
+userList = users;
+$('#user').empty();
+for(var i=0; i<userList.length; i++) {
+$('#user').append("<h1>" + userList[i] + "</h1>");
+}
+});
+</script>
 <br>
 <br>
 <br>

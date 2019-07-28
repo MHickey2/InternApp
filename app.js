@@ -1,13 +1,16 @@
 var express = require("express");
-
 var app = express();
+var flash    = require('connect-flash');
+
+//passport
 var passport = require('passport');
+var myObj = {"name": "Adam"};
+
+
 var LocalStrategy = require('passport-local').Strategy;
 var localStorage = require('node-localstorage');
 var session  = require('express-session');
 var cookieParser = require('cookie-parser');
-var flash    = require('connect-flash');
-
 
 //var tasks;
 let res1;
@@ -18,10 +21,9 @@ var fs = require('fs');
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:true}));
 
-var complete = ["finish jquery"];
+//var complete = ["finish jquery"];
 
 var bcrypt = require('bcrypt-nodejs');
-
 
 app.use(cookieParser()); // read cookies (needed for auth)
 
@@ -66,9 +68,9 @@ app.use(express.static("scripts"));
 app.use(express.static("images"));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+const fileUpload = require('express-fileupload');
+app.use(fileUpload());
 
-
-//const ejsLint = require('ejs-lint');
 
 //////////////////////////////////////////////////DATABASE SECTION//////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -90,7 +92,7 @@ const db = mysql.createConnection ({
  }
  else{
   console.log("Error in connecting DB");
-  //wstream.write('\nerror connecting to gearhost db');
+  //wstream.write('\error connecting to gearhost db');
  }
 });
 
@@ -215,16 +217,19 @@ app.get('/admin', function(req, res) {
     });
 
 
-// app.get('/login', function(req, res) {
-//
-//     // render the page and pass in any flash data if it exists
-//     res.render('login.ejs', { message: req.flash('loginMessage') });
-// });
+app.get('/login', function(req, res) {
 
+   // render the page and pass in any flash data if it exists
+    res.render('login.ejs', { message: req.flash('loginMessage') });
+});
+
+app.get('/upload', function(req, res){
+    res.render("upload");
+});
 
 app.get('/logout', function(req, res) {
     req.logout();
-    res.redirect('/login.ejs');
+    res.redirect('/');
 });
 
 
@@ -485,7 +490,7 @@ app.get('/edit/:trainingRef', function(req, res){
 
 // Post request URL to edit training
 app.post('/edit/:trainingRef', function(req, res){
-    let sql = 'UPDATE training SET deptId = "'+req.body.deptId+'", type = "'+req.body.type+'", location = "'+req.body.location+'", fromDate = "'+req.body.fromDate+'", toDate = "'+req.body.toDate+'" WHERE trainingRef= "'+req.params.trainingRef+'"';
+    let sql = 'UPDATE training SET deptId = "'+req.body.deptId+'", type = "'+req.body.type+'", location = "'+req.body.location+'", fromDate = "'+req.body.fromDate+'", todate = "'+req.body.todate+'" WHERE trainingRef= "'+req.params.trainingRef+'"';
     let query = db.query(sql, (err, res1) => {
         if(err) throw err;
         //res.render('/training' ,{res1});
@@ -532,8 +537,35 @@ io.sockets.on("connection", function(socket) {
 
 
 
-
-
+// var chatuser = [];
+//
+// app.get('communication1', function (req, res) {
+//
+//     res.sendfile(__dirname + '/test.html');
+// });
+//
+// io.sockets.on('connection', function (socket) {
+//
+//     socket.on('addchatuser', function (chatuser) {
+//         socket.user = chatuser;
+//         users.push(chatuser);
+//         updateClients();
+//     });
+//
+//     socket.on('disconnect', function () {
+//         for(var i=0; i<chatuser.length; i++) {
+//             if(chatuser[i] == socket.chatuser) {
+//                 delete chatuser[chatuser[i]];
+//             }
+//         }
+//         updateClients();
+//     });
+//
+//     function updateClients() {
+//         io.sockets.emit('update', chatusers);
+//     }
+//
+// });
 ///////////////////////////////////////////COMMUNICATION//////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -547,6 +579,18 @@ app.get('/communication', function(req, res){
 //listen on every connection
 io.on('connection', (socket) => {
     console.log('New user connected');
+
+    var userCount = 0;
+
+    io.sockets.on('connection', function (socket) {
+        userCount++;
+        io.sockets.emit('userCount', { userCount: userCount });
+        socket.on('disconnect', function() {
+            userCount--;
+            io.sockets.emit('userCount', { userCount: userCount });
+        });
+        console.log(userCount);
+    });
 
     //default username
     socket.username = "Anonymous"
@@ -683,6 +727,34 @@ app.get('/softwarecontact', function(req, res){
 ///////////////////////////////////editing details in the contacts page/////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// app.post('/register', function(req, res){
+//     if (!req.files)
+//         return res.status(400).send('No files were uploaded.');
+//
+//
+//     let sampleFile = req.files.sampleFile;
+//     var filename = sampleFile.name;
+//     // use the middleware (file upload ) to move the data from the form to the desired location
+//     sampleFile.mv('./images/' + filename, function(err){
+//         if(err)
+//             return res.status(500).send(err);
+//         console.log("Image is " + req.files.sampleFile);
+//
+//         res.redirect("/contact");
+//
+//     });
+//     console.log(filename);
+//     let sql = 'INSERT INTO users (Name, Description, Image) VALUES ("'+req.body.name+'", "'+req.body.description+'", "'+filename+'")';
+//     let query = db.query(sql, (err,res) => {
+//         if(err) throw err;
+//
+//         console.log();
+//     });
+
+
+
+
+
 //route for editing contacts
 app.get('/editcontact/:empId', function(req, res){
     let sql = 'SELECT * FROM users WHERE empId = "'+req.params.empId+'" ';
@@ -700,7 +772,22 @@ app.get('/editcontact/:empId', function(req, res){
 
 // Post request URL to edit contacts
 app.post('/editcontact/:empId', function(req, res){
-    let sql = 'UPDATE  users SET deptId = "'+req.body.deptId+'",Fname = "'+req.body.FName+'", Lname = "'+req.body.LName+'", description = "'+req.body.description+'", email = "'+req.body.email+'", PhoneNo = "'+req.body.PhoneNo+'" WHERE empId="'+req.params.empId+'"';
+    //if (!req.files)
+      //  return res.status(400).send('No files were uploaded.');
+
+
+    // let sampleFile = req.files.sampleFile;
+    // var filename = sampleFile.name;
+    // // use the middleware (file upload ) to move the data from the form to the desired location
+    // sampleFile.mv('./images/' + filename, function(err){
+    //     if(err)
+    //         return res.status(500).send(err);
+    //     console.log("Image is " + req.files.sampleFile);
+    //
+    //     res.redirect("/contact");
+
+
+    let sql = 'UPDATE  users SET deptId = "'+req.body.deptId+'", Fname = "'+req.body.FName+'", image = "'+req.body.image+'", Lname = "'+req.body.LName+'", catId = "'+req.body.catId+'", description = "'+req.body.description+'", email = "'+req.body.email+'", PhoneNo = "'+req.body.PhoneNo+'" WHERE empId="'+req.params.empId+'"';
     let query = db.query(sql, (err, res1) => {
     if(err) throw err;
     console.log(res1)
@@ -726,7 +813,24 @@ app.get('/deletecontact/:empId', function(req, res){
     });
 });
 
+///////////////////////////////////////////////upload images//////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//to upload images in the upload page
+app.post('/upload', function(req, res){
+
+    //  need to get the image from the form
+
+    let sampleFile = req.files.sampleFile;
+    var filename = sampleFile.name;
+    // use file upload to move the data from the form to the desired location
+    sampleFile.mv('./images/' + filename, function(err){
+        if(err)
+            return res.status(500).send(err);
+        console.log("Image is " + req.files.sampleFile);
+        res.redirect('/');
+    });
+});
 
 //////////////////////////////////////////////AUTHENTICATE/////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -744,6 +848,14 @@ app.get('/deletecontact/:empId', function(req, res){
 	});
 
 	// process the login form
+// app.post('/', passport.authenticate('local-login', {
+//         successRedirect : '/profile', // redirect to the secure profile section
+//         failureRedirect : 'login', // redirect back to the signup page if there is an error
+//         failureFlash : true // allow flash messages
+// 	}),
+
+
+// process the login form
 	app.post('/login', passport.authenticate('local-login', {
             successRedirect : '/profile', // redirect to the secure profile section
             failureRedirect : '/login', // redirect back to the signup page if there is an error
@@ -765,10 +877,10 @@ app.get('/deletecontact/:empId', function(req, res){
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// =====================================
 	// show the signup form
-	// app.get('/signup', function(req, res) {
-	// 	// render the page and pass in any flash data if it exists
-	// 	res.render('signup.ejs', { message: req.flash('signupMessage') });
-	// });
+	app.get('/register', function(req, res) {
+		// render the page and pass in any flash data if it exists
+		res.render('register.ejs', { message: req.flash('signupMessage') });
+	});
 
 // 	// process the signup form
 	app.post('/register', passport.authenticate('local-signup', {
@@ -778,49 +890,51 @@ app.get('/deletecontact/:empId', function(req, res){
 	}));
 
 
-	// =====================================
+
+
+// =====================================
 	////////////////////////////// PROFILE SECTION //////////////////////////////////////////////////////////////
 	// =====================================
 	// we will want this protected so you have to be logged in to visit
 	// we will use route middleware to verify this (the isLoggedIn function)
-	// app.get('/profile', isLoggedIn, function(req, res) {
-	// 	res.render('profile', {
-	// 		user : req.user // get the user out of session and pass to template
-	// 	});
-	// });
+	app.get('/profile', isLoggedIn, function(req, res) {
+		res.render('profile', {
+			user : req.user // get the user out of session and pass to template
+		});
+	});
 
 
 // 	// =====================================
 // 	// LOGOUT ==============================
 // 	// =====================================
-// 	app.get('/logout', function(req, res) {
-// 		req.logout();
-// 		res.redirect('/');
-// 	});
+	app.get('/logout', function(req, res) {
+		req.logout();
+		res.redirect('/');
+	});
 
 
 // route middleware to make sure
-// function isLoggedIn(req, res, next) {
+ function isLoggedIn(req, res, next) {
 
 // 	// if user is authenticated in the session, carry on
-// 	if (req.isAuthenticated())
-// 		return next();
+     if (req.isAuthenticated())
+         return next();
 
 // 	// if they aren't redirect them to the home page
-// 	res.redirect('/');
-// }
+     res.redirect('/');
 
+ };
 
 // // see are they admin
-// function isAdmin(req, res, next) {
+function isAdmin(req, res, next) {
 
 // 	// if user is authenticated in the session, carry on
-// 	if (req.user.admin)
-// 		return next();
+	if (req.user.admin)
+		return next();
 
 // 	// if they aren't redirect them to the home page
-// 	res.redirect('/');
-// }
+	res.redirect('/');
+}
 
 
 
@@ -835,13 +949,13 @@ app.get('/deletecontact/:empId', function(req, res){
 
     // used to serialize the user for the session
      passport.serializeUser(function(user, done) {
-        done(null, user.Id); // Very important to ensure the case if the Id from your database table is the same as it is here
+        done(null, user.empId); // Very important to ensure the case if the Id from your database table is the same as it is here
      });
 
     // // used to deserialize the 
-     passport.deserializeUser(function(Id, done) {    // LOCAL SIGNUP ============================================================
+     passport.deserializeUser(function(empId, done) {    // LOCAL SIGNUP ============================================================
 
-       db.query("SELECT * FROM users WHERE Id = ? ",[Id], function(err, rows){
+       db.query("SELECT * FROM users WHERE empId = ? ",[empId], function(err, rows){
              done(err, rows[0]);
         });
      });
@@ -880,7 +994,7 @@ app.get('/deletecontact/:empId', function(req, res){
                     var insertQuery = "INSERT INTO users ( username, email, password ) values (?,?,?)";
 
                      db.query(insertQuery,[newUserMysql.username, newUserMysql.email, newUserMysql.password],function(err, rows) {
-                        newUserMysql.Id = rows.insertId;
+                        newUserMysql.empId = rows.insertId;
 
                          return done(null, newUserMysql);
                     });

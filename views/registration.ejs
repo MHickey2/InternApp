@@ -10,30 +10,56 @@
     </div>
     
     <div class="grid-container1">
-            <form accept-charset="UTF-8" action="/add" method="post">
 
                 <div class="item">
+
+                    <h1><span class="fa fa-sign-in"></span> Sign Up</h1>
+
+
+                    <!-- LOGIN FORM -->
+
+                    <form action="/signup" method="post">
+                        <div class="form-group">
+
+                    <label for="deptId">Dept Id:</label>
+                    <input name="deptId" type="text" class="form-control"  placeholder="Please enter your deptId", required/>
+                    <br>
+                    <label for="catId">Cat Id:</label>
+                    <input name="catId" type="text" class="form-control"  placeholder="Please enter your catId", required/>
+                    <br>
                     <label for="first name">First Name:</label>
-                    <input name="first name" type="text" minlength="6" placeholder="Please enter your first name", pattern='[a-zA-Z][a-zA-Z ]{2,}', title='Please enter your first name', required/>
+                    <input name="FName" type="text" class="form-control" minlength="6" placeholder="Please enter your first name", pattern='[a-zA-Z][a-zA-Z ]{2,}', title='Please enter your first name', required/>
                     <br>
                     <label for="last name">Last Name:</label>
-                    <input name="last name" type="text" minlength="6" placeholder="Please enter your last name", pattern='[a-zA-Z][a-zA-Z ]{2,}', title='Please enter your last name', required/>
+                    <input name="LName" type="text" class="form-control" minlength="6" placeholder="Please enter your last name", pattern='[a-zA-Z][a-zA-Z ]{2,}', title='Please enter your last name', required/>
+                    <br>
+                    <label for="description">Description:</label>
+                    <input name="description" type="text" class="form-control" placeholder="Please enter a short description",  required/>
+                    <br>
+                    <label for="PhoneNo">Phone No:</label>
+                    <input name="PhoneNo" type="text" class="form-control" placeholder="Please enter your phone no",  required/>
                     <br>
                     <label for="user name">User Name:</label>
-                    <input name="user name" type="text" placeholder="Please enter your user name", pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Correct user name Format', required/>
+                    <input name="user name" type="text" class="form-control" placeholder="Please enter your user name", pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Correct user name Format', required/>
                     <br>
                     <label for="password">Password:</label>
-                    <input name="password" type="text" placeholder="Please pick a password", pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Correct password Format', required/>
+                    <input name="password" type="text" class="form-control" placeholder="Please pick a password", pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Correct password Format', required/>
                     <br>
                     <label for="email">Email:</label>
-                    <input name="email" type="text" placeholder="Please enter your email address", pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Correct email Format', required/>
+                    <input name="email" type="text" class="form-control" placeholder="Please enter your email address", pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Correct email Format', required/>
                     <br>
                     <br>
-                    <button formaction="/register" type="submit">Register</button>
+                            <button type="submit" class="button">Signup</button>
+                    </form>
+
+                    <hr>
+
+                    <p>Already have an account? <br><a href="/login" class="button">Login</a></p>
+                    <p>Or go <br><a href="/" class="button">home</a>.</p>
 
                 </div>
 
-            </form>
+    </div>
             
 
     </div>

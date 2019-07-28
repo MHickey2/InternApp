@@ -1,3 +1,4 @@
+<body>
 <% include ../partial/header %>
 
 <div class="row">
@@ -15,11 +16,11 @@
 
 
 
-                <p >
-                    <strong class="itemp">Id: </strong><%= users.deptId %><br>
-                    <strong class="itemp">username: </strong><%= users.username %><br>
-                    <strong class="itemp">username: </strong><%= users.email %><br>
-                    <strong class="itemp">password: </strong><%= users.password %>
+                <p>
+<!--                    <strong class="itemp">emp Id: </strong><%#= users.empId %><br>-->
+                    <strong class="itemp">username: </strong><%= user.username %><br>
+                    <strong class="itemp">email: </strong><%= user.email %><br>
+                    <strong class="itemp">password: </strong><%= user.password %>
                 </p>
 
 
@@ -33,3 +34,4 @@
 
 
 <% include ../partial/footer %>
+</body>
