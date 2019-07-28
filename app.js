@@ -772,19 +772,6 @@ app.get('/editcontact/:empId', function(req, res){
 
 // Post request URL to edit contacts
 app.post('/editcontact/:empId', function(req, res){
-    //if (!req.files)
-      //  return res.status(400).send('No files were uploaded.');
-
-
-    // let sampleFile = req.files.sampleFile;
-    // var filename = sampleFile.name;
-    // // use the middleware (file upload ) to move the data from the form to the desired location
-    // sampleFile.mv('./images/' + filename, function(err){
-    //     if(err)
-    //         return res.status(500).send(err);
-    //     console.log("Image is " + req.files.sampleFile);
-    //
-    //     res.redirect("/contact");
 
 
     let sql = 'UPDATE  users SET deptId = "'+req.body.deptId+'", Fname = "'+req.body.FName+'", image = "'+req.body.image+'", Lname = "'+req.body.LName+'", catId = "'+req.body.catId+'", description = "'+req.body.description+'", email = "'+req.body.email+'", PhoneNo = "'+req.body.PhoneNo+'" WHERE empId="'+req.params.empId+'"';
@@ -801,7 +788,7 @@ app.post('/editcontact/:empId', function(req, res){
 
 // route to delete training class
 
-app.get('/deletecontact/:empId', function(req, res){
+app.get('/deletecontact/:empId', function isAdmin(req, res){
 
     let sql = 'DELETE FROM users WHERE empId = "'+req.params.empId+'" ';
     let query = db.query(sql, (err, res1 ) => {
@@ -848,11 +835,11 @@ app.post('/upload', function(req, res){
 	});
 
 	// process the login form
-// app.post('/', passport.authenticate('local-login', {
+// app.post('login', passport.authenticate('local-login', {
 //         successRedirect : '/profile', // redirect to the secure profile section
 //         failureRedirect : 'login', // redirect back to the signup page if there is an error
 //         failureFlash : true // allow flash messages
-// 	}),
+// 	});
 
 
 // process the login form
@@ -865,12 +852,13 @@ app.post('/upload', function(req, res){
             console.log("hello");
 
             if (req.body.remember) {
-              req.session.cookie.maxAge = 1000 * 60 * 3;
+                req.session.cookie.maxAge = 1000 * 60 * 3;
             } else {
-              req.session.cookie.expires = false;
+                req.session.cookie.expires = false;
             }
-        res.redirect('/');
-    });
+            res.redirect('/');
+
+        });
 
 	// =====================================
 	////////////////////////////////////////////////////// SIGNUP ///////////////////////////////////////////////////////
@@ -963,7 +951,7 @@ function isAdmin(req, res, next) {
 
     // =========================================================================
     // =========================================================================
-    // we are using named strategies since we have one for login and one for signup
+    // using named strategies since we have one for login and one for signup
     // by default, if there was no name, it would just be called 'local'
 
    passport.use(
@@ -1007,8 +995,7 @@ function isAdmin(req, res, next) {
     // =========================================================================
     // LOCAL LOGIN =============================================================
     // =========================================================================
-    // we are using named strategies since we have one for login and one for signup
-    // by default, if there was no name, it would just be called 'local'
+
 
     passport.use(
         'local-login',
@@ -1039,17 +1026,6 @@ function isAdmin(req, res, next) {
 
 
 
-
-//To restrict access we need one more function as follows
-function isLoggedIn(req, res, next) {
-
-    // if user is authenticated in the session, carry on
-    if (req.isAuthenticated())
-        return next();
-
-    // if they aren't redirect them to the home page
-    res.redirect('/');
-};
 
 
 
