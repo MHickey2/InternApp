@@ -9,9 +9,9 @@
     {
         "id": 2,
         "type": "Work",
+        "description": "Work on the requirements doc for ux meeting fast",
         "priority": "High",
-        "description": "Work on the requirements doc for ux meeting",
-        "time": 11
+        "time": "11"
     },
     {
         "id": 3,

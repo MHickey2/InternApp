@@ -7,37 +7,42 @@
     <br>
     <br>
     <br>
-    <h1 class="white">Update a Training Course</h1>
-    <div class="grid-container">
+    <H1 class="center">Update a Training Course</H1>
+    <div class="grid-container2">
         <% res1.forEach(function(training) {%>
             <form accept-charset="UTF-8" action="/edit/<%= training.trainingRef %>" method="post">
                 <div class="item">
 
 
 
-                    <label for="trainingRef">Training Ref:</label>
+
+                    <label for="trainingRef" class="clear">Training Ref:</label>
                     <input name="trainingRef" type="text" value="<%= training.trainingRef %>" />
 
-                    <label for="deptId">Id:</label>
+                    <label for="deptId" class="clear">Id:</label>
                     <input name="deptId" type="text" value="<%= training.deptId %>" />
 
-                    <label for="type">Type:</label>
+                    <label for="type" class="clear">Type:</label>
                     <input name="type" type="text" value="<%= training.type %>" />
 
-                    <label for="location">Locations:</label>
+                    <label for="location" class="clear">Locations:</label>
                     <input name="location" type="text" value="<%= training.location %>" />
 
-                    <label for="fromDate">From Date:</label>
+                    <label for="fromDate" class="clear">From Date:</label>
                     <input name="fromDate" type="text" value="<%= training.fromDate %>" />
 
-                    <label for="todate">To Date:</label>
+                    <label for="todate" class="clear">To Date:</label>
                     <input name="todate" type="text" value="<%= training.todate %>" />
 <br>
-                    <button class="button">Edit Training</button>
+<br>
+                    <br>
+                    <br>                    <button class="button">Edit Training</button>
                     <br>
                 </div>
             </form>
         <% }); %>
+
+        <br>
     </div>
     <br>
     <br>
@@ -46,6 +51,8 @@
 </div>
 <br>
 <br>
-
+<br>
+<br>
+<br>
     <% include ../partial/footer %>
 </body>

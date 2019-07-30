@@ -21,7 +21,6 @@ var fs = require('fs');
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:true}));
 
-//var complete = ["finish jquery"];
 
 var bcrypt = require('bcrypt-nodejs');
 
@@ -49,7 +48,7 @@ server = app.listen(3000);
 const io = require("socket.io")(server);
 
 
-// to enable the use of the body parser
+// enables the use of the body parser
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -60,7 +59,7 @@ var tasks = require("./model/tasks.json");
 //const http = require('http').createServer(app);
 //var io = require('socket.io')(http);
 
-//call sql into action
+//calls the sql into action
 var mysql = require('mysql');
 
 app.use(express.static("views"));
@@ -75,7 +74,7 @@ app.use(fileUpload());
 //////////////////////////////////////////////////DATABASE SECTION//////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//connectivity to sql database: connection details have been added in the final report on the first page
+//connectivity to sql database: connection details have been added in the final report
 const db = mysql.createConnection ({
     host: "den1.mysql1.gear.host",
     user: "contacts2",
@@ -150,27 +149,27 @@ console.log("index page has been displayed");
 //  console.log(res);
 //  });
 
-// route to render create communication page
-app.get('/schedule', function(req, res){
+// route to render create scheduling page
+app.get('/schedule', isLoggedIn, function(req, res){
 res.render("schedule");
 console.log("welcome to the schedule page");
 });
 
-// route to render create communication page
-app.get('/assistance', function(req, res){
+// route to render create assistance page
+app.get('/assistance', isLoggedIn, function(req, res){
 res.render("assistance");
 console.log("welcome to the assistance page");
 });
 
-// route to render create communication page
-app.get('/tasklist', function(req, res){
+// route to render create tasklist page
+app.get('/tasklist', isLoggedIn, function(req, res){
 res.render("tasklist", {tasks:tasks}); // res.render command to display the contact.json file in fanclub page
 console.log("welcome to the stored tasks page");
 
 });
 
-// route to render create communication page
-app.get('/onetask', function(req, res){
+// route to render create onetask page
+app.get('/onetask', isLoggedIn, function(req, res){
     res.render("onetask", {tasks:tasks}); // res.render command to display the contact.json file in fanclub page
     console.log('welcome to that one task');
 
@@ -183,10 +182,10 @@ app.get('/onetask', function(req, res){
 // });
 
 // route to render create communication page
-app.get('/registration', function(req, res){
-res.render("registration.ejs");
-console.log("welcome to the registration page");
-});
+// app.get('/registration', function(req, res){
+// res.render("registration.ejs");
+// console.log("welcome to the registration page");
+// });
 
 // route to render create edit training page
 app.get('/edit', function(req, res){
@@ -200,34 +199,38 @@ app.get('/editcontact', function(req, res){
     console.log("welcome to the editing contact page");
 });
 
+//route to render the register page
 app.get('/register', function(req, res) {
     // render the page and pass in any flash data if it exists
     res.render('register.ejs');
 });
 
-app.get('/profile', function(req, res) {
+//route to render the profile page
+app.get('/profile', isLoggedIn, function(req, res) {
     res.render('profile.ejs', {
         user : req.user // get the user out of session and pass to template
     });
 });
 
-app.get('/admin', function(req, res) {
-    res.render("admin.ejs")
-        console.log("welcome to admin page");
-    });
+// app.get('/admin', function(req, res) {
+//     res.render("admin.ejs")
+//         console.log("welcome to admin page");
+//     });
 
-
+//route to render the login page
 app.get('/login', function(req, res) {
 
    // render the page and pass in any flash data if it exists
     res.render('login.ejs', { message: req.flash('loginMessage') });
 });
 
-app.get('/upload', function(req, res){
+//route to render the upload page
+app.get('/upload', isLoggedIn, function(req, res){
     res.render("upload");
 });
 
-app.get('/logout', function(req, res) {
+//route to render the logout page
+app.get('/logout', isLoggedIn, function(req, res) {
     req.logout();
     res.redirect('/');
 });
@@ -239,8 +242,8 @@ app.get('/logout', function(req, res) {
 //*************Add task Details***************//
 
 
-    // Write a function to find the max id in JSON file
-    app.post('/addtask', function(req,res){
+    // the function to find the max id in JSON file
+    app.post('/addtask', isLoggedIn, function(req,res){
         
     function getMax(tasks, id) {
         var max;
@@ -268,7 +271,7 @@ app.get('/logout', function(req, res) {
     };
 
     var json = JSON.stringify(tasks); // we tell the application to get our JSON readdy to modify
-    // Push the data back to the JSON file
+    // Pushing the data back to the JSON file
     
     fs.readFile('./model/tasks.json', 'utf8', function readfileCallback(err){
         if(err){
@@ -291,7 +294,7 @@ console.log(tasks.length);
 
 //*********** Function to delete a task **************//
 
-app.get('/deleteTask/:id', function(req,res) {
+app.get('/deleteTask/:id', isLoggedIn, function(req,res) {
 
     var json = JSON.stringify(tasks);
     // Get the id we want to delete from the URL parameter
@@ -304,7 +307,7 @@ app.get('/deleteTask/:id', function(req,res) {
         return tasks.id;
     }).indexOf(keyToFind);
 
-    // JavaScript allows us to splice our JSON data
+    // JavaScript allows you to splice our JSON data
 
     tasks.splice(index, 1); // delete only one item from the position of the index variable above
 
@@ -321,7 +324,7 @@ app.get('/deleteTask/:id', function(req,res) {
 
 //***************** render route to edit task *************// 
 //function to add task update page
-app.get('/taskupdate/:id', function(req,res){
+app.get('/taskupdate/:id', isLoggedIn, function(req,res){
     console.log("task update page rendered");
     function chooseTask(indOne){
         return indOne.id === parseInt(req.params.id);
@@ -335,7 +338,7 @@ app.get('/taskupdate/:id', function(req,res){
 
 //************* post request to edit contact***************// 
 
-app.post('/taskupdate/:id', function(req,res){
+app.post('/taskupdate/:id', isLoggedIn, function(req,res){
     
     var json = JSON.stringify(tasks);
     var keyToFind = parseInt(req.params.id);  // Find the data we need to edit
@@ -364,7 +367,7 @@ app.post('/taskupdate/:id', function(req,res){
 
 //*************function to see individual task**************//
 
-app.get('/onetask/:id', function(req, res) {
+app.get('/onetask/:id', isLoggedIn, function(req, res) {
   var json = JSON.stringify(tasks);
      // Get the id we want to delete from the URL parameter 
      var keyToFind = parseInt(req.params.id); 
@@ -387,7 +390,7 @@ app.get('/onetask/:id', function(req, res) {
 //CODE FOR SHOWING THE TRAINING OPTIONS ON THE TRAINING PAGE
 
 // Route to show all training details from database
-app.get('/training', function(req, res){
+app.get('/training', isLoggedIn, function(req, res){
     
     let sql = 'SELECT * FROM training';
     let query = db.query(sql, (err,res1) => {
@@ -489,7 +492,7 @@ app.get('/edit/:trainingRef', function(req, res){
 
 
 // Post request URL to edit training
-app.post('/edit/:trainingRef', function(req, res){
+app.post('/edit/:trainingRef',  function(req, res){
     let sql = 'UPDATE training SET deptId = "'+req.body.deptId+'", type = "'+req.body.type+'", location = "'+req.body.location+'", fromDate = "'+req.body.fromDate+'", todate = "'+req.body.todate+'" WHERE trainingRef= "'+req.params.trainingRef+'"';
     let query = db.query(sql, (err, res1) => {
         if(err) throw err;
@@ -500,9 +503,9 @@ app.post('/edit/:trainingRef', function(req, res){
     console.log("training has been updated");
 });
 
-// route to delete training class
+// route to delete training class, only available to admin
 
-app.get('/delete/:trainingRef', function(req, res){
+app.get('/delete/:trainingRef', isAdmin, function(req, res){
     let sql = 'DELETE FROM training WHERE trainingRef "'+req.params.trainingRef+'"' ;
     let query = db.query(sql,(err, res1 ) => {
         if(err) throw err;
@@ -570,7 +573,7 @@ io.sockets.on("connection", function(socket) {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // to render create communication page
-app.get('/communication', function(req, res){
+app.get('/communication', isLoggedIn, function(req, res){
     res.render("communication");
     console.log("welcome to the communication page");
 });
@@ -612,25 +615,25 @@ io.on('connection', (socket) => {
     })
 });
 
-
+// app.use(function (req, res, next) {
+//     res.locals.users = {
+//              res:locals.users = {users: req.username}
+//     };
+//     next();
+// });
+//
+// {{users.username}}
 
 ///////////////////////////////////////////CONTACTS////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //CODE FOR SHOWING THE CONTACT OPTIONS ON THE CONTACTS PAGE
 
-//display the contacts selection
-// app.get("contact", function(req, res) {
-//     res.render("contact");
-// });
 
-
-
-
-// Route to show all information from users 
-app.get('/contact', function(req, res){
+// Route to show all information from users
+app.get('/contact', isLoggedIn, function(req, res){
     
-        let sql = 'SELECT * FROM users';
+        let sql = 'SELECT * FROM users where admin=0';
         
     let query = db.query(sql, (err,res1) => {
         
@@ -643,19 +646,6 @@ app.get('/contact', function(req, res){
 });
 
 
-// // Route to show all details for the contacts
-// app.get('/contact', function(req, res){
-    
-//     let sql = 'SELECT deptId, catId,FName, LName, Description, Email, PhoneNo FROM users WHERE deptId="a" ORDER by LName asc';
-//     let query = db.query(sql, (err,res) => {
-        
-//         if(err) throw err;
-        
-//         res.render('contact', {res});
-//         console.log(res);
-//     });
-//     console.log(res);
-// });
 
 // //route for showing all the contacts for the accountancy Department
 app.get('/accountancycontact', function(req, res){
@@ -727,36 +717,9 @@ app.get('/softwarecontact', function(req, res){
 ///////////////////////////////////editing details in the contacts page/////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// app.post('/register', function(req, res){
-//     if (!req.files)
-//         return res.status(400).send('No files were uploaded.');
-//
-//
-//     let sampleFile = req.files.sampleFile;
-//     var filename = sampleFile.name;
-//     // use the middleware (file upload ) to move the data from the form to the desired location
-//     sampleFile.mv('./images/' + filename, function(err){
-//         if(err)
-//             return res.status(500).send(err);
-//         console.log("Image is " + req.files.sampleFile);
-//
-//         res.redirect("/contact");
-//
-//     });
-//     console.log(filename);
-//     let sql = 'INSERT INTO users (Name, Description, Image) VALUES ("'+req.body.name+'", "'+req.body.description+'", "'+filename+'")';
-//     let query = db.query(sql, (err,res) => {
-//         if(err) throw err;
-//
-//         console.log();
-//     });
-
-
-
-
 
 //route for editing contacts
-app.get('/editcontact/:empId', function(req, res){
+app.get('/editcontact/:empId', isLoggedIn, function(req, res){
     let sql = 'SELECT * FROM users WHERE empId = "'+req.params.empId+'" ';
     let query = db.query(sql, (err, res1) => {
         if(err) throw err;
@@ -771,7 +734,7 @@ app.get('/editcontact/:empId', function(req, res){
 
 
 // Post request URL to edit contacts
-app.post('/editcontact/:empId', function(req, res){
+app.post('/editcontact/:empId', isLoggedIn, function(req, res){
 
 
     let sql = 'UPDATE  users SET deptId = "'+req.body.deptId+'", Fname = "'+req.body.FName+'", image = "'+req.body.image+'", Lname = "'+req.body.LName+'", catId = "'+req.body.catId+'", description = "'+req.body.description+'", email = "'+req.body.email+'", PhoneNo = "'+req.body.PhoneNo+'" WHERE empId="'+req.params.empId+'"';
@@ -788,7 +751,7 @@ app.post('/editcontact/:empId', function(req, res){
 
 // route to delete training class
 
-app.get('/deletecontact/:empId', function isAdmin(req, res){
+app.get('/deletecontact/:empId', isAdmin, function(req, res){
 
     let sql = 'DELETE FROM users WHERE empId = "'+req.params.empId+'" ';
     let query = db.query(sql, (err, res1 ) => {
@@ -804,7 +767,7 @@ app.get('/deletecontact/:empId', function isAdmin(req, res){
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //to upload images in the upload page
-app.post('/upload', function(req, res){
+app.post('/upload', isLoggedIn, function(req, res){
 
     //  need to get the image from the form
 
@@ -834,12 +797,6 @@ app.post('/upload', function(req, res){
 		res.render('login.ejs', { message: req.flash('loginMessage') });
 	});
 
-	// process the login form
-// app.post('login', passport.authenticate('local-login', {
-//         successRedirect : '/profile', // redirect to the secure profile section
-//         failureRedirect : 'login', // redirect back to the signup page if there is an error
-//         failureFlash : true // allow flash messages
-// 	});
 
 
 // process the login form
@@ -864,6 +821,7 @@ app.post('/upload', function(req, res){
 	////////////////////////////////////////////////////// SIGNUP ///////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// =====================================
+
 	// show the signup form
 	app.get('/register', function(req, res) {
 		// render the page and pass in any flash data if it exists
@@ -883,8 +841,8 @@ app.post('/upload', function(req, res){
 // =====================================
 	////////////////////////////// PROFILE SECTION //////////////////////////////////////////////////////////////
 	// =====================================
-	// we will want this protected so you have to be logged in to visit
-	// we will use route middleware to verify this (the isLoggedIn function)
+	// this needs to be protected so you have to be logged in to visit
+	// Using route middleware to verify this (the isLoggedIn function)
 	app.get('/profile', isLoggedIn, function(req, res) {
 		res.render('profile', {
 			user : req.user // get the user out of session and pass to template
@@ -901,7 +859,7 @@ app.post('/upload', function(req, res){
 	});
 
 
-// route middleware to make sure
+// route middleware to make sure they are loggin in
  function isLoggedIn(req, res, next) {
 
 // 	// if user is authenticated in the session, carry on
@@ -933,14 +891,14 @@ function isAdmin(req, res, next) {
     // passport session setup ==================================================
     // =========================================================================
     // required for persistent login sessions
-    // passport needs ability to serialize and unserialize users out of session
+    // passport needs ability to serialize and unserialize users when out of session
 
     // used to serialize the user for the session
      passport.serializeUser(function(user, done) {
         done(null, user.empId); // Very important to ensure the case if the Id from your database table is the same as it is here
      });
 
-    // // used to deserialize the 
+    // // used to deserialize
      passport.deserializeUser(function(empId, done) {    // LOCAL SIGNUP ============================================================
 
        db.query("SELECT * FROM users WHERE empId = ? ",[empId], function(err, rows){
@@ -951,7 +909,7 @@ function isAdmin(req, res, next) {
 
     // =========================================================================
     // =========================================================================
-    // using named strategies since we have one for login and one for signup
+    // using named strategies, one for login and one for register
     // by default, if there was no name, it would just be called 'local'
 
    passport.use(
@@ -1000,12 +958,12 @@ function isAdmin(req, res, next) {
     passport.use(
         'local-login',
         new LocalStrategy({
-            // by default, local strategy uses username and password, we will override with email
+            // by default, local strategy uses username and password, will override with email
             usernameField : 'username',
             passwordField : 'password',
             passReqToCallback : true // allows us to pass back the entire request to the callback
         },
-        function(req, username, password, done) { // callback with email and password from our form
+        function(req, username, password, done) { // callback with email and password from the form
             db.query("SELECT * FROM users WHERE username = ?",[username], function(err, rows){
                 if (err)
                     return done(err);
@@ -1019,6 +977,7 @@ function isAdmin(req, res, next) {
 
                 // all is well, return successful user
                 return done(null, rows[0]);
+
             });
         })
     );
@@ -1029,10 +988,7 @@ function isAdmin(req, res, next) {
 
 
 
-// app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {
-//     console.log("webpage is up");
-//
-// });
+
 
     app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {
         console.log("webpage is up");

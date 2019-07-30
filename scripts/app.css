@@ -1,13 +1,14 @@
 /*Body*/
 body {
-    background-image: url("../blue.jpg");
+    //background-image: url("../blue.jpg");
+    background-image: url("../plainblue.jpg");
     //background-repeat: repeat;
     background-size: 100% ;
     background-attachment: scroll;
     min-height: 950px;
     height: 100%;
     width: 100%;
-    background-repeat: repeat-y;
+   // background-repeat: repeat-y;
 }   
 
 .Spacers p{
@@ -25,6 +26,7 @@ body {
 
 .center{
     text-align: center;
+    content-align: center;
 }
 
 .login{
@@ -32,19 +34,24 @@ body {
 }
 
 .logo {
-    width: 100px;
-    height: 50px;
+    width: 140px;
+    height: 100px;
+    margin-left: 10px;
+    padding-top: 20px;
 }  
 
 .navhold{
     text-align: center;
     width: 80%;
     margin-left: 200px;
-    /*margin-right: auto;*/
     float: center;
-    margin-bottom: 20px;
     font-weight: bold;
     padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
 }
 
 .holder {
@@ -56,7 +63,11 @@ body {
 /* Add a black background color to the top navigation */
 .topnav {
     width: 80%;
+    margin-top: 15px;
     margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 /* Styles the links inside the navigation bar */
@@ -66,7 +77,7 @@ body {
     text-align: center;
     padding: 10px 10px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 19px;
     line-height: 30px;
     background-color: white;
 }
@@ -78,8 +89,14 @@ body {
 }
 
 /* Add a color to the active/current link */
-.topnav .active {
+.topnav a:active {
     background-color: darkblue;
+    color: white;
+}
+
+/* Add a color to the active/current link */
+.topnav a:selection{
+    background-color: green;
     color: white;
 }
 
@@ -98,13 +115,17 @@ body {
   background-color: black;
   color: white;
   text-align: center;
-  height:90px; 
+  height:90px;
+  font-size: 28px;
 }
+
 /*login for application*/
 .login-form {
 			width: 300px;
 			margin: 0 auto;
 			font-family: Tahoma, Geneva, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
 		}
 		.login-form h1 {
 			text-align: center;
@@ -219,8 +240,9 @@ btn1{
   background-color: white;  
   padding: 30px;
   width: 50%;
-  margin-left: 350px;
-  
+  //margin-left: 350px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 input[type=text], select {
@@ -244,6 +266,7 @@ input[type=text], select {
 .nobull {
 list-style-type: none;
 input: 20px "Freestyle Script";
+ color: black;
 }
 
 
@@ -327,24 +350,51 @@ item {
     border: 1px solid #ccc;
 }
 .grid-container1{
+     margin-top: 20px;
+     border-radius: solid teal 15px ;
+     content-align: left;
+     width: 50%;
+     color: black;
+     margin: auto;
+     background-color: #81BEF7;
+     height: 500px;
+     margin-left: auto;
+     margin-rgiht: auto;
+ }
+
+.grid-container2{
     margin-top: 20px;
     border-radius: solid teal 15px ;
     content-align: left;
-    width: 50%;
+    width: 45%;
     color: black;
     margin: auto;
     background-color: #81BEF7;
-    height: 500px;
+    height: 680px;
     margin-left: auto;
     margin-rgiht: auto;
+    padding: 40px;
 }
 
+.grid-container3{
+    margin-top: 20px;
+    border-radius: solid teal 15px ;
+    content-align: left;
+    width: 45%;
+    color: black;
+    margin: auto;
+    background-color: #81BEF7;
+    height: 970px;
+    margin-left: auto;
+    margin-rgiht: auto;
+    padding: 40px;
+}
 input[type="text"] {
     width: 90%;
     background-color: white;
     color: teal;
     //padding: 15px 20px;
-    margin: 8px 0;
+    margin: 8px 0;git
     //cursor: pointer;
     //margin: 10px;
     display: block;
@@ -394,6 +444,7 @@ label {
 .clear{
     font-size: 28px;
     font-weight: bold;
+    color: white;
 }
 
 .border{
@@ -405,3 +456,16 @@ label {
     margin-left: auto;
     margin-right: auto;
 }
+
+#responsive{
+
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+}
+
+H1, H5{
+    color: white;
+}
+
+
