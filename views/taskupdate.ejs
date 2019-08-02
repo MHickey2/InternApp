@@ -1,5 +1,15 @@
-<body>   
-    <% include ../partial/header %>   
+<% include ../partial/header %>
+<body>
+<% include ../partial/nav %>
+
+<head>
+
+    <title>Intern Training Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../app.css" type="text/css">
+
+
+</head>
  
 <br>
 <br>
@@ -10,9 +20,9 @@
               
                           <form action="/taskupdate/<%= tasks.id %>" method="post">
                               <div class="item">
-                                    <label for="id" name="id" class="clear">Id: <%= tasks.id %></label>
-                                    <br />
-                                    <input name="newId" type="text"  value="<%= tasks.id %>" style="display: none;"/>
+<!--                                    <label for="id" name="id" class="clear">Id: <%#= tasks.id %></label>-->
+<!--                                    <br />-->
+<!--                                    <input name="newId" type="text"  value="<%#= tasks.id %>" style="display: none;"/>-->
                                     <br /> 
                                     <label for="name" class="clear">Type:</label>
                                     <br />
