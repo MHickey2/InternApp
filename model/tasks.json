@@ -2,43 +2,43 @@
     {
         "id": 1,
         "type": "Work",
-        "description": "Study for the New Project test",
+        "description": "Study for the New Project ",
         "priority": "Medium",
-        "time": "9"
+        "time": "9.00am"
     },
     {
         "id": 2,
         "type": "Work",
         "description": "Work on the requirements doc for ux meeting fast",
         "priority": "High",
-        "time": "11"
+        "time": "11.am"
     },
     {
         "id": 3,
         "type": "Home",
         "description": "Get in contact with the Service Company",
         "priority": "Medium",
-        "time": "4"
+        "time": "12.00pm"
     },
     {
         "id": 4,
         "type": "Study",
+        "description": "Make the wireframes for the website",
         "priority": "Low",
-        "description": "make the wireframes for the website",
-        "time": 4
+        "time": "1.00pm"
     },
     {
         "id": 5,
-        "type": "Home",
+        "type": "work",
+        "description": "Meeting with the ux team about project",
         "priority": "Low",
-        "description": "Do the recycling for thursday",
-        "time": 9
+        "time": "3.00pm"
     },
     {
         "id": 6,
         "type": "Work",
-        "description": "Put notes together for the presentation today",
+        "description": "Put notes together for the presentation tonight",
         "priority": "High",
-        "time": "7"
+        "time": "4.30pm"
     }
 ]

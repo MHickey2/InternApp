@@ -477,7 +477,7 @@ app.get('/softwaretraining', function(req, res){
 
 //route for editing training
 
-app.get('/edit/:trainingRef', function(req, res){
+app.get('/edit/:trainingRef', isLoggedIn, isAdmin, function(req, res){
     let sql = 'SELECT * FROM training WHERE trainingRef = "'+req.params.trainingRef+'" ';
     let query = db.query(sql, (err, res1) => {
         if(err) throw err;
@@ -492,7 +492,7 @@ app.get('/edit/:trainingRef', function(req, res){
 
 
 // Post request URL to edit training
-app.post('/edit/:trainingRef',  function(req, res){
+app.post('/edit/:trainingRef',  isLoggedIn, isAdmin, function(req, res){
     let sql = 'UPDATE training SET deptId = "'+req.body.deptId+'", type = "'+req.body.type+'", location = "'+req.body.location+'", fromDate = "'+req.body.fromDate+'", todate = "'+req.body.todate+'" WHERE trainingRef= "'+req.params.trainingRef+'"';
     let query = db.query(sql, (err, res1) => {
         if(err) throw err;
@@ -505,7 +505,7 @@ app.post('/edit/:trainingRef',  function(req, res){
 
 // route to delete training class, only available to admin
 
-app.get('/delete/:trainingRef', isAdmin, function(req, res){
+app.get('/delete/:trainingRef', isLoggedIn, isAdmin, function(req, res){
     let sql = 'DELETE FROM training WHERE trainingRef "'+req.params.trainingRef+'"' ;
     let query = db.query(sql,(err, res1 ) => {
         if(err) throw err;
@@ -751,7 +751,7 @@ app.post('/editcontact/:empId', isLoggedIn, function(req, res){
 
 // route to delete training class
 
-app.get('/deletecontact/:empId', isAdmin, function(req, res){
+app.get('/deletecontact/:empId', isLoggedIn, isAdmin, function(req, res){
 
     let sql = 'DELETE FROM users WHERE empId = "'+req.params.empId+'" ';
     let query = db.query(sql, (err, res1 ) => {
@@ -847,6 +847,7 @@ app.post('/upload', isLoggedIn, function(req, res){
 		res.render('profile', {
 			user : req.user // get the user out of session and pass to template
 		});
+
 	});
 
 
@@ -859,7 +860,7 @@ app.post('/upload', isLoggedIn, function(req, res){
 	});
 
 
-// route middleware to make sure they are loggin in
+// route middleware to make sure they are login in
  function isLoggedIn(req, res, next) {
 
 // 	// if user is authenticated in the session, carry on
@@ -977,6 +978,7 @@ function isAdmin(req, res, next) {
 
                 // all is well, return successful user
                 return done(null, rows[0]);
+
 
             });
         })

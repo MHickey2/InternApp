@@ -4,17 +4,14 @@
 <div class="row">
     <br>
     <br>
-    <br>
-    <br>
+
     <br>
     <H1 class="center">Update a Training Course</H1>
     <div class="grid-container2">
         <% res1.forEach(function(training) {%>
             <form accept-charset="UTF-8" action="/edit/<%= training.trainingRef %>" method="post">
                 <div class="item">
-
-
-
+<br>
 
                     <label for="trainingRef" class="clear">Training Ref:</label>
                     <input name="trainingRef" type="text" value="<%= training.trainingRef %>" />
@@ -34,19 +31,19 @@
                     <label for="todate" class="clear">To Date:</label>
                     <input name="todate" type="text" value="<%= training.todate %>" />
 <br>
-<br>
                     <br>
-                    <br>                    <button class="button">Edit Training</button>
                     <br>
+                    <br>
+                                   <button class="button">Edit Training</button>
                 </div>
+                    <br>
+
             </form>
         <% }); %>
-
+            <br>
+            <br>
         <br>
-    </div>
-    <br>
-    <br>
-    <br>
+    s
 
 </div>
 <br>
