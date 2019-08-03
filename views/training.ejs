@@ -12,61 +12,58 @@
 
 
 <div class="center">
-    <h1>Choose a Tile to see the Training Options for your Department</h1>
-    <br>
+        <h1>Choose a Tile to see the Training Options for your Department</h1>
+<br>
 
 
     <div class="options">
-        <br>
+<br>
 
 
-        <a href="/accountancytraining"><img src="accountancy.jpg" class="images" alt="accountancy"/></a>
-        <a href="/customerservicetraining"><img src="customer.jpg" class="images" alt="customerservice"/></a>
-        <a href="/marketingtraining"><img src="marketing.png" class="images" alt="marketing"/></a>
-        <a href="/salestraining"><img src="sales.jpg" class="images" alt="sales"/></a>
-        <a href="/softwaretraining"><img src="software.jpg" class="images" alt="software"/></a>
-        <br>
+            <a href="/accountancytraining"><img src="accountancy.jpg" class="images" alt="accountancy"/></a>
+            <a href="/customerservicetraining"><img src="customer.jpg" class="images" alt="customerservice"/></a>
+            <a href="/marketingtraining"><img src="marketing.png" class="images" alt="marketing"/></a>
+            <a href="/salestraining"><img src="sales.jpg" class="images" alt="sales"/></a>
+            <a href="/softwaretraining"><img src="software.jpg" class="images" alt="software"/></a>
+            <br>
     </div>
-    <br>
+<br>
 </div>
 
 
-<div class="grid-container">
+        <div class="grid-container">
 
-    <% res1.forEach(function(training) { %>
+                <% res1.forEach(function(training) { %>
 
-        <div class="item2">
-            <div class="item">
-                <!--                    <h3 class="itemtitle">Id: <%#= training.deptId %></h3>-->
-                <h3 class="itemp">TrainingRef: <%= training.trainingRef %></h3>
-                <h3 class="itemp">DeptId: <%= training.deptId %></h3>
-                <h3 class="itemp">Type: <%= training.type %></h3>
-                <h3 class="itemp">Location: <%= training.location %></h3>
-                <!--<h3 class="itemp">Time: <%#= training.time %></h3>-->
-                <h3 class="itemp">From Date: <%= training.fromDate %></h3>
-                <h3 class="itemp">To Date: <%= training.todate %></h3>
-                <a href="/delete/<%= training.trainingRef %>" class="button">Delete Me!</a>
-                <a href="/edit/<%= training.trainingRef %>" class="button">Edit Me!</a>
-                <!--                    <a href="/show/<%#= training.chrId %>" class="button">See this Character!</a>-->
+                            <div class="item2">
+                                        <div class="item">
+                                                    <!--                    <h3 class="itemtitle">Id: <%#= training.deptId %></h3>-->
+                                                    <h3 class="itemp">TrainingRef: <%= training.trainingRef %></h3>
+                                                    <h3 class="itemp">DeptId: <%= training.deptId %></h3>
+                                                    <h3 class="itemp">Type: <%= training.type %></h3>
+                                                    <h3 class="itemp">Location: <%= training.location %></h3>
+                                                    <!--<h3 class="itemp">Time: <%#= training.time %></h3>-->
+                                                    <h3 class="itemp">From Date: <%= training.fromDate %></h3>
+                                                    <h3 class="itemp">To Date: <%= training.todate %></h3>
+                                                    <a href="/delete/<%= training.trainingRef %>" class="button">Delete Me!</a>
+                                                    <a href="/edit/<%= training.trainingRef %>" class="button">Edit Me!</a>
+                                                    <!--                    <a href="/show/<%#= training.chrId %>" class="button">See this Character!</a>-->
 
-                <br>
+<br>
+<br>
+                                        </div>
+                            </div>
 
-                <br>
-            </div>
+                <% }); %>
+<br>
+<br>
+<br>
+
         </div>
 
-    <% }); %>
-    <br>
-    <br>
-    <br>
-
-</div>
-
 <br>
 <br>
 <br>
-
-
 <br>
 <br>
 

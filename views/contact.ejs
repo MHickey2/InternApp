@@ -3,35 +3,35 @@
 <% include ../partial/nav %>
 
 
-<head>
+    <head>
 
-    <title>Intern Contact Page</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="../app.css" type="text/css">
+        <title>Intern Contact Page</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--        <link rel="stylesheet" href="../app.css" type="text/css">-->
 
 
-  </head>
+    </head>
 
                
-    <div class="center">
-    <h1>Choose a Tile to see the Contact Options for your Department</h1>
+<div class="center">
+            <h1>Choose a Tile to see the Contact Options for your Department</h1>
     <br>
    
 
 
-<div class="options">
+    <div class="options">
     <br>
     
     
-<a href="/accountancycontact"><img src="accountancy.jpg" class="images" alt="accountancy"/></a>
-<a href="/customerservicecontact" ><img src="customer.jpg" class="images" alt=""customerservice/></a>
-<a href="/marketingcontact"><img src="marketing.png" class="images" alt="marketing"/></a>
-<a href="/salescontact"><img src="sales.jpg" class="images" alt="sales"/></a>
-<a href="/softwarecontact"><img src="software.jpg" class="images" alt="software"/></a>
-<br>
-</div>
+        <a href="/accountancycontact"><img src="accountancy.jpg" class="images" alt="accountancy"/></a>
+        <a href="/customerservicecontact" ><img src="customer.jpg" class="images" alt=""customerservice/></a>
+        <a href="/marketingcontact"><img src="marketing.png" class="images" alt="marketing"/></a>
+        <a href="/salescontact"><img src="sales.jpg" class="images" alt="sales"/></a>
+        <a href="/softwarecontact"><img src="software.jpg" class="images" alt="software"/></a>
 <br>
     </div>
+<br>
+</div>
 
 
 <div class="grid-container">
@@ -39,32 +39,29 @@
         <% res1.forEach(function(users) { %>
 
             <div class="item2">
-                <div class="item">
-<!--                    <h3 class="itemtitle">Id: <%= users.empId %></h3>-->
-                    <h3 class="itemp">Employee Id: <%= users.empId %></h3>
-                    <img src="/<%= users.image %>"  alt="profilepic"></image>
-                    <h3 class="itemp">Department Id: <%= users.deptId %></h3>
-                    <h3 class="itemp">Category Id: <%= users.catId %></h3>
-                    <h3 class="itemp">First Name: <%= users.FName %></h3>
-                    <h3 class="itemp">Last Name: <%= users.LName %></h3>
-                    <h3 class="itemp">Description: <%= users.Description %></h3>
-                    <h3 class="itemp">Email: <%= users.email %></h3>
-                    <h3 class="itemp">Phone No: <%= users.PhoneNo %></h3>
-                    <a href="/deletecontact/<%= users.empId %>" class="button">Delete Me!</a>
-                    <a href="/editcontact/<%= users.empId %>" class="button">Edit Me!</a>
+                    <div class="item">
+        <!--                    <h3 class="itemtitle">Id: <%= users.empId %></h3>-->
+                            <h3 class="itemp">Employee Id: <%= users.empId %></h3>
+                            <img src="/<%= users.image %>"  alt="profilepic"></image>
+                            <h3 class="itemp">Department Id: <%= users.deptId %></h3>
+                            <h3 class="itemp">Category Id: <%= users.catId %></h3>
+                            <h3 class="itemp">First Name: <%= users.FName %></h3>
+                            <h3 class="itemp">Last Name: <%= users.LName %></h3>
+                            <h3 class="itemp">Description: <%= users.Description %></h3>
+                            <h3 class="itemp">Email: <%= users.email %></h3>
+                            <h3 class="itemp">Phone No: <%= users.PhoneNo %></h3>
+                            <a href="/deletecontact/<%= users.empId %>" class="button">Delete Me!</a>
+                            <a href="/editcontact/<%= users.empId %>" class="button">Edit Me!</a>
     <br>
     <br> 
-                </div>
+                    </div>
             </div>
 
 
         <% }); %>
 
 
-                    
-                    
-                   
-                    
+
  
 <br>
  

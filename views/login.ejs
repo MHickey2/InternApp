@@ -2,53 +2,57 @@
 <body>
 <% include ../partial/nav %>
 
+<head>
 <title>Login Page</title>
+</head>
 
-<div class="row">
-    <div class="container1">
-        <div class="item">
-            <h1 class="center"><span class="fa fa-sign-in"></span> Login</h1>
 
-            <!-- show any messages that come back with authentication -->
-            <% if (message.length > 0) { %>
-                <div class="alert alert-danger"><%= message %></div>
-            <% } %>
+    <div class="row">
+        <div class="container1">
+            <div class="item">
+                <h1 class="center"><span class="fa fa-sign-in"></span> Login</h1>
 
-            <!-- LOGIN FORM -->
-            <div class="border">
-                <form action="/login" method="post">
-                    <div class="form-group">
-                        <label class="clear">Username</label>
-                        <input type="text" name="username" class="form-control">
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label class="clear">Password</label>
-                        <input type="text" class="form-control" name="password">
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label class="clear">Remember Me<br></label>
-                        <input type="checkbox" class="form-control" name="remember" value="yes">
-                    </div>
+                    <!-- show any messages that come back with authentication -->
+                    <% if (message.length > 0) { %>
+                            <div class="alert alert-danger"><%= message %></div>
+                    <% } %>
 
-                    <button type="submit" class="button">Login</button>
-                </form>
-                <br>
-            </div>
+                                <!-- LOGIN FORM -->
+                                    <div class="border">
+                                            <form action="/login" method="post">
+                                                        <div class="form-group">
+                                                            <label class="clear">Username</label>
+                                                            <input type="text" name="username" class="form-control">
+                                                        </div>
+                                                        <br>
+                                                        <div class="form-group">
+                                                            <label class="clear">Password</label>
+                                                            <input type="text" class="form-control" name="password">
+                                                        </div>
+                                                        <br>
+                                                        <div class="form-group">
+                                                            <label class="clear">Remember Me<br></label>
+                                                            <input type="checkbox" class="form-control" name="remember" value="yes">
+                                                        </div>
 
-            <hr>
+                                                        <button type="submit" class="button">Login</button>
+                                            </form>
+ <br>
+                                    </div>
+
+                            <hr>
 
             <div class="item">
-                <h5 class="clear">Need an account? <br> <a href="/register" class="button">Register</a></h5>
-                <h5 class="clear ">Or Go <br><a href="/" class="button">Home</a></h5>
+                        <h5 class="clear">Need an account? <br> <a href="/register" class="button">Register</a></h5>
+                        <h5 class="clear ">Or Go <br><a href="/" class="button">Home</a></h5>
             </div>
         </div>
     </div>
-    <br>
+<br>
 </div>
 
 <br>
 <br>
+
 <% include ../partial/footer %>
 </body>

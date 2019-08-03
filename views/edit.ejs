@@ -12,49 +12,50 @@
 </head>
 
 <div class="row">
-    <br>
-    <br>
+<br>
+<br>
+<br>
 
-    <br>
+
     <H1 class="center">Update a Training Course</H1>
-    <div class="grid-container2">
-        <% res1.forEach(function(training) {%>
-            <form accept-charset="UTF-8" action="/edit/<%= training.trainingRef %>" method="post">
-                <div class="item">
+
+        <div class="grid-container2">
+            <% res1.forEach(function(training) {%>
+                <form accept-charset="UTF-8" action="/edit/<%= training.trainingRef %>" method="post">
+                    <div class="item">
 <br>
 
-                    <label for="trainingRef" class="clear">Training Ref:</label>
-                    <input name="trainingRef" type="text" value="<%= training.trainingRef %>" />
+                            <label for="trainingRef" class="clear">Training Ref:</label>
+                            <input name="trainingRef" type="text" value="<%= training.trainingRef %>" />
 
-                    <label for="deptId" class="clear">Id:</label>
-                    <input name="deptId" type="text" value="<%= training.deptId %>" />
+                            <label for="deptId" class="clear">Id:</label>
+                            <input name="deptId" type="text" value="<%= training.deptId %>" />
 
-                    <label for="type" class="clear">Type:</label>
-                    <input name="type" type="text" value="<%= training.type %>" />
+                            <label for="type" class="clear">Type:</label>
+                            <input name="type" type="text" value="<%= training.type %>" />
 
-                    <label for="location" class="clear">Locations:</label>
-                    <input name="location" type="text" value="<%= training.location %>" />
+                            <label for="location" class="clear">Locations:</label>
+                            <input name="location" type="text" value="<%= training.location %>" />
 
-                    <label for="fromDate" class="clear">From Date:</label>
-                    <input name="fromDate" type="text" value="<%= training.fromDate %>" />
+                            <label for="fromDate" class="clear">From Date:</label>
+                            <input name="fromDate" type="text" value="<%= training.fromDate %>" />
 
-                    <label for="todate" class="clear">To Date:</label>
-                    <input name="todate" type="text" value="<%= training.todate %>" />
+                            <label for="todate" class="clear">To Date:</label>
+                            <input name="todate" type="text" value="<%= training.todate %>" />
 <br>
-                    <br>
-                    <br>
-                    <br>
+<br>
+<br>
+<br>
                                    <button class="button">Edit Training</button>
-                </div>
-                    <br>
+                    </div>
+<br>
 
-            </form>
-        <% }); %>
+                </form>
+            <% }); %>
             <br>
-            <br>
-        <br>
-    s
-
+<br>
+<br>
+        </div>
 </div>
 <br>
 <br>

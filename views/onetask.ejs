@@ -1,43 +1,68 @@
+
 <% include ../partial/header %>
 <body>
 <% include ../partial/nav %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--my page info goes here-->
+<div class="row">
+    <div class="container2">
+        <ul class="nobull">
+            <li><label for="task id">Task Id:&nbsp;</label><%= tasks[t].id %></li>
+            <li><label for="type">Type:&nbsp;</label><%= tasks[t].type %> </li>
+            <li><label for="description">Description:&nbsp;</label><%= tasks[t].description %></li>
+            <li><label for="priority">Priority:&nbsp;</label><%= tasks[t].priority %> </li>
+            <li><label for="time">Time:&nbsp;</label><%= tasks[t].time %></li>
 
-<head>
+            <br>
+            <br>
+            <li><a href="/tasklist">Back to Tasklist</a></li>
+            <br>
+        </ul>
+    </div>
+</div>
+<br>
+<br>
 
-    <title>Intern Training Page</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="../app.css" type="text/css">
+<% include ../partial/footer %>
+</body>
+<!--<%# include ../partial/header %>-->
+<!--<body>-->
+<!--<%# include ../partial/nav %>-->
 
+<!--  <br>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--  <br>-->
+<!--        &lt;!&ndash;my page info goes here&ndash;&gt;-->
+<!--        <div class="row">-->
+<!--              <div class="container2">-->
+<!--                  <ul class="nobull">-->
+<!--                      <li><label for="task id">Task Id:&nbsp;</label><%#= tasks[t].id %></li>-->
+<!--                      <li><label for="type">Type:&nbsp;</label><%#= tasks[t].type %> </li>-->
+<!--                      <li><label for="description">Description:&nbsp;</label><%#= tasks[t].description %></li>-->
+<!--                      <li><label for="priority">Priority:&nbsp;</label><%#= tasks[t].priority %> </li>-->
+<!--                      <li><label for="time">Time:&nbsp;</label><%#= tasks[t].time %></li>-->
 
-</head>
-  
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br> 
-        <!--my page info goes here-->
-        <div class="row">
-              <div class="container2">
-                  <ul class="nobull">
-                      <li><label for="task id">Task Id:&nbsp;</label><%= tasks[t].id %></li>
-                      <li><label for="type">Type:&nbsp;</label><%= tasks[t].type %> </li>
-                      <li><label for="description">Description:&nbsp;</label><%= tasks[t].description %></li>
-                      <li><label for="priority">Priority:&nbsp;</label><%= tasks[t].priority %> </li>
-                      <li><label for="time">Time:&nbsp;</label><%= tasks[t].time %></li>
-                      
-                      <br>
-                      <br>
-                      <li><a href="/tasklist" class="button">Back to Tasklist</a></li>
-                      <br>                  
-                   </ul>
-              </div>
-        </div>
-    <br>
-  <br> 
+<!--                      <br>-->
+<!--                      <br>-->
+<!--                      <li><a href="/tasklist" class="button">Back to Tasklist</a></li>-->
+<!--                      <br>-->
+<!--                   </ul>-->
+<!--              </div>-->
+<!--        </div>-->
+<!--    <br>-->
+<!--  <br>-->
 
-   <% include ../partial/footer %>
- </body>
+<!--   <%# include ../partial/footer %>-->
+<!-- </body>-->

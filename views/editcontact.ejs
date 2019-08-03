@@ -11,65 +11,64 @@
 
 </head>
 
-<div class="row">
-    <br>
+        <div class="row">
+<br>
+<br>
+<br>
+            <h1 class="center">Update Contact Details</h1>
+<br>
 
-    <br>
-    <br>
-    <h1 class="center">Update Contact Details</h1>
-    <br>
+                <div class="grid-container3">
+                    <% res1.forEach(function(users) {%>
+                        <form accept-charset="UTF-8" action="/editcontact/<%= users.empId %>" method="post">
+                                <div class="item">
 
-    <div class="grid-container3">
-        <% res1.forEach(function(users) {%>
-        <form accept-charset="UTF-8" action="/editcontact/<%= users.empId %>" method="post">
-            <div class="item">
+                                            <label for="empId" class="clear">Emp Id:</label>
+                                            <input name="empId" type="text" value="<%= users.empId %>" />
 
-                    <label for="empId" class="clear">Emp Id:</label>
-                    <input name="empId" type="text" value="<%= users.empId %>" />
+                                            <label for="image" class="clear">Image:</label>
+                                            <input name="image" type="text" value="<%= users.image %>" />
 
-                    <label for="image" class="clear">Image:</label>
-                    <input name="image" type="text" value="<%= users.image %>" />
+                                            <label for="deptId" class="clear">Dept Id:</label>
+                                            <input name="deptId" type="text" value="<%= users.deptId %>" />
 
-                    <label for="deptId" class="clear">Dept Id:</label>
-                    <input name="deptId" type="text" value="<%= users.deptId %>" />
+                                            <label for="catId" class="clear">Cat Id:</label>
+                                            <input name="catId" type="text" value="<%= users.catId %>" />
 
-                    <label for="catId" class="clear">Cat Id:</label>
-                    <input name="catId" type="text" value="<%= users.catId %>" />
+                                            <label for="FName" class="clear">First Name:</label>
+                                            <input name="FName" type="text" value="<%= users.FName %>" />
 
-                    <label for="FName" class="clear">First Name:</label>
-                    <input name="FName" type="text" value="<%= users.FName %>" />
+                                            <label for="LName" class="clear">Last Name:</label>
+                                            <input name="LName" type="text" value="<%= users.LName %>" />
 
-                    <label for="LName" class="clear">Last Name:</label>
-                    <input name="LName" type="text" value="<%= users.LName %>" />
+                                            <label for="Description" class="clear">Description:</label>
+                                            <input name="description" type="text" value="<%= users.Description %>" />
 
-                    <label for="Description" class="clear">Description:</label>
-                    <input name="description" type="text" value="<%= users.Description %>" />
+                                            <label for="email" class="clear">Email:</label>
+                                            <input name="email" type="text" value="<%= users.email %>" />
 
-                    <label for="email" class="clear">Email:</label>
-                    <input name="email" type="text" value="<%= users.email %>" />
+                                            <label for="PhoneNo" class="clear">Phone No:</label>
+                                            <input name="PhoneNo" type="text" value="<%= users.PhoneNo %>" />
+<br>
+<br>
+                                                <button class="button">Edit Contact</button>
+<br>
+<br>
+<br>
+<br>
+                                </div>
+                        </form>
+                    <% }); %>
+           </div>
+<br>
+<br>
+<br>
+           </div>
+<br>
+<br>
+<br>
 
-                    <label for="PhoneNo" class="clear">Phone No:</label>
-                    <input name="PhoneNo" type="text" value="<%= users.PhoneNo %>" />
-                <br>
-                <br>
-                    <button class="button">Edit Contact</button>
-                <br>
-                    <br>
-                <br>
-                <br>
-                </div>
-            </form>
-        <% }); %>
-    </div>
-    <br>
-    <br>
-    <br>
-</div>
-    <br>
-    <br>
-    <br>
 
-</div>
 <br>
 <br>
 <br>

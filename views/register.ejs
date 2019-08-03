@@ -2,44 +2,45 @@
 <body>
 <% include ../partial/nav %>
 
-<div class="row">
-    <div class="container1">
+        <div class="row">
+            <div class="container1">
 
-        <div class="item">
+                <div class="item">
 
-            <h1 class="center"><span class="fa fa-sign-in"></span> Register</h1>
+                    <h1 class="center"><span class="fa fa-sign-in"></span> Register</h1>
 
 
-            <!-- LOGIN FORM -->
-            <div class="border">
-                <form action="/register" method="post">
-                    <div class="form-group">
-                        <label class="clear">Username</label>
-                        <input type="text" class="form-control" name="username">
-                    </div>
-                    <div class="form-group">
-                        <label class="clear">Email</label>
-                        <input type="text" class="form-control" name="email">
-                    </div>
-                    <div class="form-group">
-                        <label class="clear">Password</label>
-                        <input type="text" class="form-control" name="password">
-                    </div>
-                    <br>
-                    <button type="submit" class="button">Register</button>
-                </form>
-            </div>
-            <hr>
+                                <!-- LOGIN FORM -->
+                                <div class="border">
+                                    <form action="/register" method="post">
+                                        <div class="form-group">
+                                                <label class="clear">Username</label>
+                                                <input type="text" class="form-control" name="username">
+                                        </div>
+                                        <div class="form-group">
+                                                <label class="clear">Email</label>
+                                                <input type="text" class="form-control" name="email">
+                                        </div>
+                                        <div class="form-group">
+                                                <label class="clear">Password</label>
+                                                <input type="text" class="form-control" name="password">
+                                        </div>
+                                        <br>
+                                                <button type="submit" class="button">Register</button>
+                                    </form>
+                                </div>
+                                <hr>
 
-            <h5 class="clear">Already have an account? <br><a href="/login" class="button">Login</a></h5>
-            <h5 class="clear">Or go <br><a href="/" class="button">Home</a></h5>
+                                <h5 class="clear">Already have an account? <br><a href="/login" class="button">Login</a></h5>
+                                <h5 class="clear">Or go <br><a href="/" class="button">Home</a></h5>
 
+                                </div>
+
+                </div>
         </div>
+<br>
+<br>
+<br>
 
-    </div>
-</div>
-<br>
-<br>
-<br>
 <% include ../partial/footer %>
 </body>
