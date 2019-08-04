@@ -3,32 +3,38 @@
 <% include ../partial/nav %>
 
 
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Intern Schedule Page</title>-->
+<!--    <link rel="stylesheet" href="../app.css" type="text/css">-->
+<!--</head>-->
 
-<head>
-        <title>Intern Schedule Page</title>
-        <link rel="stylesheet" href="../app.css" type="text/css">
-</head>
 
 <h1 class="center">Scheduling</h1>
 
 
-<a href="/tasklist" class="button">&nbspSee Task List</a>
+<a href="/tasklist" class="button">&nbsp;See Task List</a>
 <br>
 <br>
         <div class="grid-container2">
 
+
+
+
+
+
+
                 <form accept-charset="UTF-8" action="/addtask" method="POST">
                         <div class="item">
-                                    <label for="task id" class="clear">Task Id:</label>
-                                    <input name="task id" type="text" minlength="1" placeholder="Please enter your name" required/>
-                        <br>
+                                    <label for="id" class="clear">Task Id:</label>
+                                    <input name="id" type="text" minlength="1" placeholder="Please enter your name" ,required/>
+ <br>
                                     <label for="type" class="clear">Type:</label>
-                                    <input name="type" type="text" placeholder="Please enter the type of task" , title='Correct email Format' ,
-                                           required/>
+                                    <input name="type" type="text" placeholder="Please enter the type of task" , required/>
                                     <br>
                                     <label for="description" class="clear">Description:</label>
-                                    <input name="description" type="text" minlength="10" placeholder="Please enter task details" ,
-                                           pattern='[a-zA-Z][a-zA-Z ]{4,}'  required/>
+                                    <input name="description" type="text" minlength="10" placeholder="Please enter task details",
+                                           required/>
                                     <br>
                                     <label for="priority" class="clear">Priority:</label>
                                     <input name="priority" type="text" placeholder="priority level....." title='indicate the priority level' , required/>
@@ -36,7 +42,8 @@
                                     <label for="time" class="clear">Time:</label>
                                     <input name="time" type="text" placeholder="to be done by....." title='what is the time frame' , required/>
                                     <br>
-                                    <button formaction="/Addtask" type="submit">Add Task</button>
+<!--                                    <button formaction="/addtask" type="submit">Add Task</button>-->
+                            <button class="button">add task</button>
                         </div>
 
 

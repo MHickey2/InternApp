@@ -33,12 +33,5 @@
         "description": "Meeting with the ux team about project",
         "priority": "Low",
         "time": "3.00pm"
-    },
-    {
-        "id": 6,
-        "type": "Work",
-        "description": "Put notes together for the presentation tonight",
-        "priority": "High",
-        "time": "4.30pm"
     }
 ]

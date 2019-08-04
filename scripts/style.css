@@ -24,7 +24,6 @@ div#change_username, section#input_zone {*/
     width:500px;
     Height: 500px;
     margin: auto;
-
 }
 
 div#change_username {
@@ -41,14 +40,12 @@ section#chatroom {
     width: 75%;
     overflow: auto;
     margin: auto;
-
 }
 
 section#input_zone {
     height: 7%;
     text-align: center;
    // background-color: #BCA9F5;
-
 }
 
 .vertical-align {
@@ -92,3 +89,4 @@ p.message {
 
 .message:nth-child(odd) {
     background-color: #81BEF7;
+}

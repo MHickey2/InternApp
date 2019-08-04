@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45228c78-4af4-42fb-bec5-74e51ce17b41" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/I516508.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/tasks.json" beforeDir="false" afterPath="$PROJECT_DIR$/model/tasks.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/onetask.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/onetask.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/schedule.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/schedule.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/taskupdate.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/taskupdate.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,37 +22,87 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/schedule.ejs">
+        <entry file="file://$PROJECT_DIR$/model/tasks.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="20" selection-start-line="6" selection-end-line="9" selection-end-column="7" />
+            <state relative-caret-position="214">
+              <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/tasklist.ejs">
+        <entry file="file://$PROJECT_DIR$/views/taskupdate.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/onetask.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+            <state relative-caret-position="272">
+              <caret line="16" column="65" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/taskupdate.ejs">
+        <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+            <state relative-caret-position="-3540">
+              <caret line="759" column="134" selection-start-line="759" selection-start-column="134" selection-end-line="759" selection-end-column="134" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/app.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-687">
+              <caret line="414" selection-start-line="414" selection-end-line="414" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/chat.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-568">
+              <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="91" column="1" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notes">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/assistance.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/communication.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/contact.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1071">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
             </state>
           </provider>
         </entry>
@@ -93,11 +145,8 @@
         <option value="$PROJECT_DIR$/views/logout.ejs" />
         <option value="$PROJECT_DIR$/views/admin.ejs" />
         <option value="$PROJECT_DIR$/scripts/chat.css" />
-        <option value="$PROJECT_DIR$/scripts/style.css" />
         <option value="$PROJECT_DIR$/views/registration.ejs" />
         <option value="$USER_HOME$/Downloads/authenthicatesejs-master/authenthicatesejs-master/app.js" />
-        <option value="$PROJECT_DIR$/scripts/app.css" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/partial/nav.ejs" />
         <option value="$PROJECT_DIR$/partial/header.ejs" />
         <option value="$PROJECT_DIR$/views/assistance.ejs" />
@@ -112,17 +161,20 @@
         <option value="$PROJECT_DIR$/views/tasklist.ejs" />
         <option value="$PROJECT_DIR$/views/training.ejs" />
         <option value="$PROJECT_DIR$/views/upload.ejs" />
-        <option value="$PROJECT_DIR$/views/schedule.ejs" />
-        <option value="$PROJECT_DIR$/model/tasks.json" />
         <option value="$PROJECT_DIR$/views/onetask.ejs" />
         <option value="$PROJECT_DIR$/views/taskupdate.ejs" />
+        <option value="$PROJECT_DIR$/views/schedule.ejs" />
+        <option value="$PROJECT_DIR$/model/tasks.json" />
+        <option value="$PROJECT_DIR$/scripts/app.css" />
+        <option value="$PROJECT_DIR$/scripts/style.css" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1202" />
-    <option name="y" value="27" />
-    <option name="width" value="700" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="336" />
+    <option name="y" value="182" />
+    <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -131,6 +183,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -162,7 +215,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -170,7 +222,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="VAR" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/partial" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../InternAppG" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -195,10 +247,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.app.js">
+    <configuration name="schedule.ejs" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/InternAppAuth/views/schedule.ejs" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="app.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.schedule.ejs" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -274,7 +334,13 @@
       <workItem from="1564837577118" duration="177000" />
       <workItem from="1564837801650" duration="485000" />
       <workItem from="1564838568403" duration="2170000" />
-      <workItem from="1564842459327" duration="1440000" />
+      <workItem from="1564842459327" duration="2253000" />
+      <workItem from="1564852972402" duration="78000" />
+      <workItem from="1564853208563" duration="1533000" />
+      <workItem from="1564864840384" duration="866000" />
+      <workItem from="1564868867059" duration="1577000" />
+      <workItem from="1564920047253" duration="3347000" />
+      <workItem from="1564943971996" duration="3519000" />
     </task>
     <task id="LOCAL-00001" summary="up to date project, authenthication needed">
       <created>1563618217123</created>
@@ -315,7 +381,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266898000" />
+    <option name="totallyTimeSpent" value="278631000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -328,23 +394,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.86491936" visible="true" weight="0.21480502" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.86491936" visible="true" weight="0.087904826" />
       <window_info id="Structure" order="1" sideWeight="0.13416989" side_tool="true" weight="0.05851375" />
       <window_info id="npm" order="2" sideWeight="0.13508065" side_tool="true" weight="0.13245033" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32796487" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49239922" visible="true" weight="0.37774524" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4990086" weight="0.21229868" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49239922" visible="true" weight="0.44216692" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4990086" weight="0.19765739" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.329429" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4996691" weight="0.32796487" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5076008" side_tool="true" weight="0.30746704" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49686098" weight="0.4070278" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49686098" weight="0.1669107" />
       <window_info anchor="bottom" id="Thumbnails" order="11" visible="true" weight="0.329429" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.329429" />
       <window_info anchor="bottom" id="GitHub Pull Requests" order="13" weight="0.329429" />
@@ -440,20 +505,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/admin.ejs" />
-    <entry file="file://$PROJECT_DIR$/scripts/chat.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/js-security.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -472,13 +523,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/partial/footer.ejs">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/partial/header-o.ejs">
       <provider selected="true" editor-type-id="text-editor">
@@ -512,27 +556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/assistance.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-343">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/communication.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/contact.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
         </state>
       </provider>
     </entry>
@@ -585,22 +608,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/tasks.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Music/InternAppNew/views/onetask.ejs">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="367" column="60" selection-start-line="367" selection-start-column="60" selection-end-line="367" selection-end-column="60" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$USER_HOME$/Music/InternAppNew/app.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -619,10 +628,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/onetask.ejs">
+    <entry file="file://$PROJECT_DIR$/views/schedule.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        <state relative-caret-position="1088">
+          <caret line="64" column="4" selection-start-line="64" selection-start-column="4" selection-end-line="64" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -633,17 +642,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/schedule.ejs">
+    <entry file="file://$PROJECT_DIR$/views/onetask.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="20" selection-start-line="6" selection-end-line="9" selection-end-column="7" />
+        <state relative-caret-position="187">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/taskupdate.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        <state relative-caret-position="272">
+          <caret line="16" column="65" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/communication.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/contact.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/tasks.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-687">
+          <caret line="414" selection-start-line="414" selection-end-line="414" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/chat.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-568">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="91" column="1" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/assistance.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3540">
+          <caret line="759" column="134" selection-start-line="759" selection-start-column="134" selection-end-line="759" selection-end-column="134" />
         </state>
       </provider>
     </entry>
