@@ -2,7 +2,7 @@
     {
         "id": 1,
         "type": "Work",
-        "description": "Study for the New Project for couple of hours",
+        "description": "Study for the  Project for couple of hours",
         "priority": "Medium",
         "time": "9.00am"
     },
@@ -23,15 +23,8 @@
     {
         "id": 4,
         "type": "Study",
-        "description": "Make the wireframes for the website",
+        "description": "Make the wireframes for the new website",
         "priority": "Low",
         "time": "1.00pm"
-    },
-    {
-        "id": 5,
-        "type": "work",
-        "description": "Meeting with the ux team about project design",
-        "priority": "Low",
-        "time": "3.00pm"
     }
 ]

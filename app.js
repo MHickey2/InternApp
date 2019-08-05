@@ -73,7 +73,15 @@ app.use(fileUpload());
 
 //////////////////////////////////////////////////DATABASE SECTION//////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//connectivity to sql database: connection details have been added in the final report after table of contents
+const db = mysql.createConnection ({
+    host: "den1.mysql1.gear.host",
+    user: "contacts2",
+    password: "Ip2q0zJXg-j!",
+    database: "contacts2",
+    multipleStatements: true //this allows for multiple sql statements in 1 function
 
+});
 
 //connectivity to sql database: connection details have been added in the final report after table of contents
 
@@ -547,11 +555,11 @@ app.post('/edit/:trainingRef',  isLoggedIn, isAdmin, function(req, res){
 // route to delete training class, only available to admin
 
 app.get('/delete/:trainingRef', isLoggedIn, isAdmin, function(req, res){
-    let sql = 'DELETE FROM training WHERE trainingRef "'+req.params.trainingRef+'"' ;
+    let sql = 'DELETE FROM training WHERE trainingRef = "'+req.params.trainingRef+'"' ;
     let query = db.query(sql,(err, res1 ) => {
         if(err) throw err;
         console.log(res1);
-        //res.redirect('/training');
+        res.redirect('/training');
         console.log("class deleted");
     });
 
