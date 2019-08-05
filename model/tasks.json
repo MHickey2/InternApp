@@ -30,7 +30,7 @@
     {
         "id": 5,
         "type": "work",
-        "description": "Meeting with the ux team about project",
+        "description": "Meeting with the ux team about project design",
         "priority": "Low",
         "time": "3.00pm"
     }

@@ -73,15 +73,7 @@ app.use(fileUpload());
 
 //////////////////////////////////////////////////DATABASE SECTION//////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//connectivity to sql database: connection details have been added in the final report after table of contents
-const db = mysql.createConnection ({
-    host: "den1.mysql1.gear.host",
-    user: "contacts2",
-    password: "Ip2q0zJXg-j!",
-    database: "contacts2",
-    multipleStatements: true //this allows for multiple sql statements in 1 function
 
-});
 
 //connectivity to sql database: connection details have been added in the final report after table of contents
 
@@ -271,7 +263,7 @@ app.post('/addtask', function(req,res){
     var json = JSON.stringify(tasks); // we tell the application to get our JSON readdy to modify
     // Push the data back to the JSON file
 
-    fs.readFile('./model/tasks.json', 'utf8', function readfileCallback(err){
+    fs.readFile('./model/tasks.json', 'utf8', function readfileCallback(err,data){
         if(err){
             throw(err);
 
