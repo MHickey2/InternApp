@@ -3,11 +3,10 @@
 <% include ../partial/nav %>
 
 
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Intern Schedule Page</title>-->
-<!--    <link rel="stylesheet" href="../app.css" type="text/css">-->
-<!--</head>-->
+<head>
+    <title>Intern Schedule Page</title>
+    <link rel="stylesheet" href="../app.css" type="text/css">
+</head>
 
 
 <h1 class="center">Scheduling</h1>
@@ -26,8 +25,8 @@
 
                 <form accept-charset="UTF-8" action="/addtask" method="POST">
                         <div class="item">
-                                    <label for="id" class="clear">Task Id:</label>
-                                    <input name="id" type="text" minlength="1" placeholder="Please enter your name" ,required/>
+                                    <label for="task id" class="clear">Task Id:</label>
+                                    <input name="task id" type="text" minlength="1" placeholder="Please enter your name" ,required/>
  <br>
                                     <label for="type" class="clear">Type:</label>
                                     <input name="type" type="text" placeholder="Please enter the type of task" , required/>
@@ -42,8 +41,8 @@
                                     <label for="time" class="clear">Time:</label>
                                     <input name="time" type="text" placeholder="to be done by....." title='what is the time frame' , required/>
                                     <br>
-<!--                                    <button formaction="/addtask" type="submit">Add Task</button>-->
-                            <button class="button">add task</button>
+                                    <button formaction="/addtask" type="submit">Add Task</button>
+
                         </div>
 
 

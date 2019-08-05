@@ -73,21 +73,23 @@ app.use(fileUpload());
 
 //////////////////////////////////////////////////DATABASE SECTION//////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 //connectivity to sql database: connection details have been added in the final report after table of contents
 const db = mysql.createConnection ({
     host: "den1.mysql1.gear.host",
     user: "contacts2",
     password: "Ip2q0zJXg-j!",
-    database: "contacts2",    
+    database: "contacts2",
     multipleStatements: true //this allows for multiple sql statements in 1 function
 
- });
+});
+
+//connectivity to sql database: connection details have been added in the final report after table of contents
+
 
  db.connect(function (err){
  if(!err){
   console.log("DB connected");
-  //wstream.write('\nConnected to gearhost DB...');
+  //wstream.write('\Connected to gearhost DB...');
  }
  else{
   console.log("Error in connecting DB");
@@ -236,31 +238,29 @@ app.get('/logout', isLoggedIn, function(req, res) {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //*************Add task Details***************//
-
-
 fs.readFile = function (s, utf8, readfileCallback) {
-    
+
 }
-// the function to find the max id in JSON file
-    app.post('/addtask',  function(req,res){
-        
+// Write a function to find the max id in JSON file
+app.post('/addtask', function(req,res){
+
     function getMax(tasks, id) {
         var max;
-       
+
         for (var i=0; i<tasks.length; i++) {
             if(!max || parseInt(tasks[i][id]) > parseInt(max[id]));
             max = tasks[i];
         }
         console.log("The max id is " + max);
         return max;
-}
-   
-   var maxCid = getMax(tasks, "id");
-   var newId = maxCid.id + 1; // make a new variable for id which is 1 larger than the current max
-    
+    }
+
+    var maxCid = getMax(tasks, "id");
+    var newId = maxCid.id + 1; // make a new variable for id which is 1 larger than the current max
+
     console.log("New id is: " + newId);
     // creating a new JSON object
-    
+
     var contactsx = {
         id: newId,
         type: req.body.type,
@@ -268,28 +268,78 @@ fs.readFile = function (s, utf8, readfileCallback) {
         priority: req.body.priority,
         time: req.body.time
     };
-
     var json = JSON.stringify(tasks); // we tell the application to get our JSON readdy to modify
-    // Pushing the data back to the JSON file
-    
+    // Push the data back to the JSON file
+
     fs.readFile('./model/tasks.json', 'utf8', function readfileCallback(err){
         if(err){
             throw(err);
-            
+
         } else {
-            
-          tasks.push(contactsx);  // add the new contact to the JSON file
-          json = JSON.stringify(tasks, null, 4); // structure the new data nicely in the JSON file
-          fs.writeFile('./model/tasks.json', json, 'utf8');
+
+            tasks.push(contactsx);  // add the new contact to the JSON file
+            json = JSON.stringify(tasks, null, 4); // structure the new data nicely in the JSON file
+            fs.writeFile('./model/tasks.json', json, 'utf8');
         }
     });
     console.log(tasks);
     res.redirect('/tasklist');
-   
+
 });
 console.log(tasks);
 console.log(tasks.length);
 
+
+
+// // the function to find the max id in JSON file
+//     app.post('/addtask',  function(req,res){
+//
+//     function getMax(tasks, id) {
+//         var max;
+//
+//         for (var i=0; i<tasks.length; i++) {
+//             if(!max || parseInt(tasks[i][id]) > parseInt(max[id]));
+//             max = tasks[i];
+//         }
+//         console.log("The max id is " + max);
+//         return max;
+// }
+//
+//    var maxCid = getMax(tasks, "id");
+//    var newId = maxCid.id + 1; // make a new variable for id which is 1 larger than the current max
+//
+//     console.log("New id is: " + newId);
+//     // creating a new JSON object
+//
+//     var contactsx = {
+//         id: newId,
+//         type: req.body.type,
+//         description: req.body.description,
+//         priority: req.body.priority,
+//         time: req.body.time
+//     };
+//
+//     var json = JSON.stringify(tasks); // we tell the application to get our JSON readdy to modify
+//     // Pushing the data back to the JSON file
+//
+//     fs.readFile('./model/tasks.json', 'utf8', function readfileCallback(err, data){
+//         if(err){
+//             throw(err);
+//
+//         } else {
+//
+//           tasks.push(contactsx);  // add the new contact to the JSON file
+//           json = JSON.stringify(tasks, null, 4); // structure the new data nicely in the JSON file
+//           fs.writeFile('./model/tasks.json', json, 'utf8');
+//         }
+//     });
+//     console.log(tasks);
+//     res.redirect('/tasklist');
+//
+// });
+// console.log(tasks);
+// console.log(tasks.length);
+//
 
 //*********** Function to delete a task **************//
 
@@ -977,11 +1027,7 @@ function isAdmin(req, res, next) {
 
 
 
-
-
-
-
-
+    //
 
     app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {
         console.log("webpage is up");
